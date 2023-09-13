@@ -75,6 +75,7 @@ public class _02_bisection_method {
         return (a + b) / 2;
     }
     public static double f(double x){
-        return 2*(x * x * x) - 2*x - 5;
+        double function=Math.pow(2,x)- 5*x +2;
+        return function;
     }
 }

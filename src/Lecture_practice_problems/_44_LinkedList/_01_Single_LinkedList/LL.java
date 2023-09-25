@@ -9,6 +9,34 @@ public class LL {
      }
 
 
+
+    public boolean hasCycle(Node head) {
+
+        // we take two pointer fast and slow , one moves by one step ahead at a time and another moves by two step at a time so if there is a cycle present in the linked list then the fast and the slow pointer will meet somewhere and not they will point to null at the end
+        Node fast=head;
+        Node slow=head;
+
+        // fast.next can't be null cause if it is null then we can't check for fast.next.next so we need this check and for slow there is no need to check cause if fast is at null then surely there is no cycle present and we know that fast will reach null before slow
+        while(fast!= null && fast.next!= null){
+            slow=slow.next;
+            fast=fast.next.next; // this is null in case there is only two elements are present and no cycle is present
+            if(slow==fast){
+                return true;
+            }
+        }
+        return false;
+    }
+     public Node removeDuplicates(Node node){
+         while(node!=null){
+             if (node.value == node.next.value) {
+                 node.next=node.next.next;
+             }
+             else{
+                 node=node.next;
+             }
+         }
+         return node;
+     }
      public void insertFirst(int value){
       Node node=new Node(value);
       node.next=head;
@@ -47,6 +75,23 @@ public class LL {
          Node node=new Node(value,temp.next);
          temp.next=node;
          size++;
+     }
+     public void insertRec(int value,int index){
+         head=insertRec(value,index-1,head);
+     }
+     private Node insertRec(int value,int index,Node node){
+         if(node==null){
+             return node;
+         }
+         if(index==0) {
+             Node temp = new Node(value,node.next);
+             node.next=temp;
+             size++;
+             return node;
+         }
+
+         node.next=insertRec(value,index-1,node.next);
+         return node;
      }
     public int deleteFirst(){
          Node temp=head;

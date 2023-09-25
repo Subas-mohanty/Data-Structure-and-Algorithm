@@ -10,11 +10,14 @@ public class _01_LinkedList_Creation {
         list.insertLast(101);
         list.insert(5,2);
         list.display();
-        System.out.println(list.deleteFirst());
+        list.insertRec(2,3);
         list.display();
-        System.out.println(list.deleteLast());
-        list.display();
-        System.out.println(list.delete(1));
-        list.display();
+
+//        System.out.println(list.deleteFirst());
+//        list.display();
+//        System.out.println(list.deleteLast());
+//        list.display();
+//        System.out.println(list.delete(1));
+//        list.display();
     }
 }

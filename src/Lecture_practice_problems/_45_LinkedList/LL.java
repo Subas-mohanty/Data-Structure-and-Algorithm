@@ -1,8 +1,5 @@
 package Lecture_practice_problems._45_LinkedList;
 
-
-import java.util.List;
-
 public class LL {
     Node head;
     Node tail;
@@ -276,7 +273,8 @@ public class LL {
             slow=slow.next;
             fast=fast.next.next;
             if(slow==fast){
-                length=cycleLength(slow);
+//                length=cycleLength(head);
+                length=cycleLength(slow);// this will be a little bit faster as it will not traverse the non-cycle part of the linked list
                 break;
             }
         }
@@ -286,9 +284,12 @@ public class LL {
         Node first=head;
         Node second=head;
 
-        while(length>0){
+//        while(length>0){
+//            second=second.next;
+//            length--;
+//        }
+        for (int i = 0; i < length; i++) {
             second=second.next;
-            length--;
         }
         // now both will move forward until they meet
         while(first!=second){

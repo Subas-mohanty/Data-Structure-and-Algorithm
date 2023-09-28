@@ -5,10 +5,10 @@ import java.util.Arrays;
 public class _01_QuickSort {
     public static void main(String[] args) {
         int [] arr={5,4,3,2,1};
-//        sort(arr,0,arr.length-1);
-//        System.out.println(Arrays.toString(arr));;
-        Arrays.sort(arr); // This is an inbuilt method for sorthing arrays
-        System.out.println(Arrays.toString(arr));
+        sort(arr,0,arr.length-1);
+        System.out.println(Arrays.toString(arr));;
+//        Arrays.sort(arr); // This is an inbuilt method for sorthing arrays
+//        System.out.println(Arrays.toString(arr));
     }
     static void sort(int [] nums,int low,int high){
         // this the first violation condition , which means either the array is empty or indexes are wrongly passed

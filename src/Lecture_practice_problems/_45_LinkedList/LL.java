@@ -424,7 +424,7 @@ public class LL {
     }
 
     // This class is for every nodes
-    public class Node{
+    public static class Node{
         public int value;
         public Node next;
         public Node(){

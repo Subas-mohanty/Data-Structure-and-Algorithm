@@ -1,0 +1,25 @@
+package Leetcode;
+
+import java.util.Arrays;
+//https://leetcode.com/problems/plus-one/
+public class _12_plus_one {
+    public static void main(String[] args) {
+        int [] arr={9,9,9};
+        System.out.println(Arrays.toString(plusOne(arr)));
+    }
+    public static int[] plusOne(int[] digits) {
+        for (int i = digits.length - 1; i >= 0; i--) {
+            // we are checking for the last element if it is less than 9 , then add 1 to it and just return the array
+            if (digits[i] < 9) {
+                digits[i]++;
+                return digits;
+            }
+            // if the last element is 9 then change it to 0, and add 1 to its previous element which is not equal to 9
+            digits[i] = 0;
+        }
+        // if the number is like 9, 99 or 999 then this will execute when adding 1 will create 1 more digits
+        digits = new int[digits.length + 1];
+        digits[0] = 1;
+        return digits;
+    }
+}

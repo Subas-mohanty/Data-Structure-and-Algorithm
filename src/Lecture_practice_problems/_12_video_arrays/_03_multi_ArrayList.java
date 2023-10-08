@@ -13,6 +13,7 @@ public class _03_multi_ArrayList {
             list.add(new ArrayList<>());
         }
 
+        // for taking input
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 list.get(i).add(sc.nextInt());

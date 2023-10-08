@@ -6,11 +6,13 @@ import java.util.Collections;
 public class _05_max_element_of_array {
     public static void main(String[] args) {
         int [] arr={45,54,12,78,178};
-        System.out.println(max(arr));
-        System.out.println(maxInRange(arr,1,3));
+//        System.out.println(max(arr));
+//        System.out.println(maxInRange(arr,1,3));
 
         // this will sort the array in reverse order but the arr should be of wrapper class, i.e, Integer [] arr= new Integer[];
-        //Arrays.sort(arr, Collections.reverseOrder());
+        Integer[] what = Arrays.stream( arr ).boxed().toArray( Integer[]::new ); // convert int [] array to Integer [] array
+        Arrays.sort(what, Collections.reverseOrder());
+        System.out.println(Arrays.toString(what));
     }
 
     // check the maximum value in the given range of the array

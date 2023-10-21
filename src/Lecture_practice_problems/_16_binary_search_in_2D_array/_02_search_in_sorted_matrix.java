@@ -29,19 +29,23 @@ public class _02_search_in_sorted_matrix {
     }
     static int [] search(int[][] arr,int target){
         int row=arr.length;
-        int column=arr[0].length;
+        int column=arr[0].length; // be cautious , there might be a possibility that the matrix is empty, it will give null pointer exception
 
+        // if only one row is present, we simply perform binary search on that
         if(row==1){
             return binarySearch(arr,0,0,column-1,target);
         }
         int rStart=0;
         int rEnd=row-1;
         int cMid=column/2;
+
+        // with this while condition we make sure that there are two rows present at least
         while(rStart<(rEnd-1)){
             int mid=rStart+(rEnd-rStart)/2;
             if(arr[mid][cMid]==target){
                  return new int[]{mid,cMid};
             }
+            // if the target is greater than the current element then no need to search in the above rows as the matrix is strictly sorted and all the above rows must have elements smaller than the current element
             else if(arr[mid][cMid]<target){
                 rStart=mid;
             }
@@ -49,19 +53,21 @@ public class _02_search_in_sorted_matrix {
                 rEnd=mid;
             }
         }
-//        check whether the target is in the column of two rows
+        // now we have two rows
+        // check whether the target is in the column of two rows
         if (arr[rStart][cMid] == target) {
             return new int[]{rStart,cMid};
         }
         else if(arr[rStart+1][cMid] == target) {
             return new int[]{rStart+1,cMid};
         }
+
         //search in 1st half
-        if(target<arr[rStart][cMid-1]){
+        if(target<=arr[rStart][cMid-1]){
             return binarySearch(arr,rStart,0,cMid-1,target);
         }
         //search in 2nd half
-        if(target>=arr[rStart][cMid+1] && target>=arr[rStart][column-1]){
+        if(target>=arr[rStart][cMid+1] && target<=arr[rStart][column-1]){
             return binarySearch(arr,rStart,cMid+1,column-1,target);
         }
         //search in 3rd half

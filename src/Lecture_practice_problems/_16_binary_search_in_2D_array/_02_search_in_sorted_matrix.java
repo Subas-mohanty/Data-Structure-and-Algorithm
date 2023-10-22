@@ -9,7 +9,7 @@ public class _02_search_in_sorted_matrix {
                 {12,24,32},
                 {17,29,35}
         };
-        int [] ans=search(arr,44);
+        int [] ans=search(arr,24);
         System.out.println(Arrays.toString(ans));
     }
     static int [] binarySearch(int [][] arr,int row,int cStart, int cEnd,int target){

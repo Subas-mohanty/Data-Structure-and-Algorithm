@@ -1,11 +1,10 @@
 package Leetcode;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//https://leetcode.com/problems/4sum/
+//https://leetcode.com/problems/4sum/ 
+// Time complexity: O(N^3), because for two loops its O(N^2) and the while loop inside it running for n times so in total its O(N^3)
 public class _20_4Sum {
 
     public static List<List<Integer>> fourSum(int[] nums, int target) {
@@ -20,7 +19,6 @@ public class _20_4Sum {
                 long target2 = target - (long)nums[i] - (long)nums[j];
                 int start=j+1;
                 int end=length-1;
-                // binary search between start and end
                 while(start<end){
                     // start and end may exceed the integer range if the number is bigger, so we are using long for that
                     long twoSum = (long)nums[start] + (long)nums[end];
@@ -46,6 +44,7 @@ public class _20_4Sum {
         }
         return result;
     }
+
     // Threesum
     public static List<List<Integer>> threeSum(int[] nums, int target) {
         Arrays.sort(nums);

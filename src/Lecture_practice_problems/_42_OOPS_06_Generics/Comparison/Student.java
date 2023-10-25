@@ -15,11 +15,11 @@ public class Student implements Comparable<Student>{
     }
 
     @Override
-    public int compareTo(Student o) {
-        int diff=(int)(this.marks-o.marks);
+    public int compareTo(Student object) {
+        int diff=(int)(this.marks-object.marks);
 
         // if diff == 0 : means both are equals
-        // if diff < 1 : means o is bigger else o is smaller
+        // if diff < 0 : means object is bigger else object is smaller
 
         return diff;
     }

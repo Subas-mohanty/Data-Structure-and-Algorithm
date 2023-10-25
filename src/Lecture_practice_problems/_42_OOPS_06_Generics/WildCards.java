@@ -49,7 +49,13 @@ public class WildCards< T extends Number> {
     public void set(int index, T value){
         data[index]=value;
     }
+    // this is wild-card
+    // here we can pass Number or it's subclasses
     public void getList(List<? extends Number> list){
+        // function body
+    }
+    // here we can't pass the subclasses only Number is acceptable
+    public void getList2(List<Number> list){
         // function body
     }
 

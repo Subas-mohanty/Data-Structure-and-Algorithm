@@ -5,9 +5,11 @@ public class Human implements Cloneable{
     String name;
     int [] arr;
 
+    // this also does shallow copy
 //    public Human(Human other){
 //        this.age=other.age;
 //        this.name=other.name;
+//        this.arr=other.arr;
 //    }
     public Human(int age, String name) {
         this.age = age;

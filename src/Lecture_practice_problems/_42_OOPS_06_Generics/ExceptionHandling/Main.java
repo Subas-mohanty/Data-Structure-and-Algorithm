@@ -5,11 +5,20 @@ public class Main {
         int a=3;
         int b=0;
         try {
-            //int c=a/b;
-            int c=divide(a,b);
-            System.out.println(c);
-        }catch (Exception e){
-            System.out.println(e);
+//            divide(a, b);
+            // mimicing
+            String name = "subas";
+            if (name.equals("subas")) {
+                throw new MyException("name is subas");
+            }
+        } catch (MyException e) {
+            System.out.println(e.getMessage());
+        } catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println("normal exception");
+        } finally {
+            System.out.println("this will always execute");
         }
     }
     static int divide(int a, int b) throws ArithmeticException{

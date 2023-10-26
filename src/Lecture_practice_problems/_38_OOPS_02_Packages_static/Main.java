@@ -13,7 +13,6 @@ public class Main {
         Main funn = new Main();
         funn.greeting();
         funn.fun2();
-
     }
 
     // this is not dependent on objects

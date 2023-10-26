@@ -12,16 +12,16 @@ public class Basic{
         Week(){
             System.out.println("Constructor called for " + this.toString());
         }
-
-        @Override
-        public void greet() {
-            System.out.println("Hey how are you ?");
-        }
         // this is not public or protected, only private or default
         // why? we don't want to create new objects
         // this is not the enum concept, that's why
 
         // internally: public static final Week Monday = new Week();
+
+        @Override
+        public void greet() {
+            System.out.println("Hey how are you ?");
+        }
     }
 
     public static void main(String[] args) {

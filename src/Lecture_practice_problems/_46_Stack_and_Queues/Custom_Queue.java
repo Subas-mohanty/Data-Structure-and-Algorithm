@@ -16,7 +16,7 @@ public class Custom_Queue {
         if (isFull()) {
             return false;
         }
-        data[end++]=element; // data[end] is equal to data[end] then end++
+        data[end++]=element; // data[end] is equal to element then end++
         return true;
     }
     public int remove() throws Exception {

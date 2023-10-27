@@ -18,8 +18,9 @@ public class Circular_Queue {
         if (isFull()) {
             return false;
         }
-        data[end]=element;
-        end++;
+//        data[end]=element;
+//        end++;
+        data[end++]=element;
         end=end%data.length;
         size++;
         return true;
@@ -44,10 +45,12 @@ public class Circular_Queue {
             System.out.println("Queue is empty !");
             return;
         }
+        // start from front
         int i=front;
         do{
             System.out.print(data[i]+" ->");
             i++;
+            // when i reaches data.length, so modules take to the start again
             i%=data.length;
         }while(i!=end);
         System.out.println("END");

@@ -4,6 +4,7 @@ public class Custom_Stack {
     int [] data;
     static final int DEFAULT_SIZE=10;
     int ptr=-1;
+    // when no parameters is passed then it will create the object using the default size and for this we are using this keyword to call the constructor that takes one integer argument
     Custom_Stack(){
         this.data=new int[DEFAULT_SIZE];
     }

@@ -20,7 +20,7 @@ public class _01_Stack_Implementation {
 //        System.out.println(stack.pop());
 //        System.out.println(stack.pop());
 
-        Queue<Integer> queue =new LinkedList<>();
+        Queue<Integer> queue =new LinkedList<>(); // LinkedList implements Deque and Deque extends Queue so LinkedList object can be used in Queue interface reference
         queue.add(34);
         queue.add(3);
         queue.add(21);

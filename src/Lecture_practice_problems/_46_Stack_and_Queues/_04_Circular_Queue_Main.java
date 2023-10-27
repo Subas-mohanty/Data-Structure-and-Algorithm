@@ -1,6 +1,6 @@
 package Lecture_practice_problems._46_Stack_and_Queues;
 
-public class _04_Circular_Queue {
+public class _04_Circular_Queue_Main {
     public static void main(String[] args) throws Exception {
         Circular_Queue queue = new Circular_Queue();
         queue.insert(34);

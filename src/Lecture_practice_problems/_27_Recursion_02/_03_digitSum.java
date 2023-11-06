@@ -8,6 +8,7 @@ public class _03_digitSum {
         if (n == 0) {
             return 0;
         }
-        return (n%10) + sum(n/10); // first it will do n%10 , that will give the last digit than we are calling the recursive call with n/10 which means , now the number is reduced by 1 digit
+//        return (n%10) + sum(n/10); // first it will do n%10 , that will give the last digit than we are calling the recursive call with n/10 which means , now the number is reduced by 1 digit
+        return sum(n/10) + (n%10) ;
     }
 }

@@ -5,12 +5,12 @@ import java.util.Arrays;
 public class _01_TrianglePattern {
     public static void main(String[] args) {
 //        pattern(4,0);
-//        pattern2(4,0);
+        pattern2(4,0);
 //        int [] arr={4,3,2,1};
 //        bubble(arr,arr.length-1,0);
 //        System.out.println(Arrays.toString(arr));
 
-        int [] arr={4,2,3,1};
+        int [] arr={1,4,3,5};
         selection(arr,arr.length,0,0);
         System.out.println(Arrays.toString(arr));
     }

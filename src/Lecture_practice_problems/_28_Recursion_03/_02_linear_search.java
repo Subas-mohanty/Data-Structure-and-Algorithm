@@ -79,9 +79,12 @@ public class _02_linear_search {
     }
 
 
+    // DSA-02 date: 05-11-2023
     static ArrayList<Integer> searchAllIndex2(int [] arr, int target, int index){
         // write condition for empty array
+
         ArrayList<Integer> list=new ArrayList<>();
+
         // base condition
         if(index==arr.length){
             return list;

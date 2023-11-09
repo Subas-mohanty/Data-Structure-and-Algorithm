@@ -43,12 +43,29 @@ public class AVL {
         if(value>node.value){
             node.right=insert(value,node.right);
         }
+        // updating height of the node after inserting
         node.height=Math.max(height(node.left),height(node.right))+1;
 
-        return rotate(node);
+        // this thing is doing the same thing as line number-63. In that line we are doing exactly the same thing for ex- we are calling rotate function on every node so you might think that every node will be rotated and the tree will shattered but that's not happening there because in the rotate function we are only rotating the node if it is unbalanced so the if check here is already happening in the rotate function so no need to check more and if it is already balanced then we are only returning the node so this retrun rotate(node) will also return the same node as normal
+        if(!balanced(node)){
+            /* Question: why are we returning the rotate(node), why can't we just call the function ?
+               Ans:- we have to understand what the rotate function is doing , after rotating the unbalanced node it is returning the node which is balanced after rotating so if we don't return that the value will not be updated so either we return that or we can store that is the node itself
+             */
+
+            /*  node=rotate(node);
+              }
+              return node  */
+
+            return rotate(node);
+        }
+        return node;
+
+//        return rotate(node);
+
     }
 
     private Node rotate(Node node) {
+        // in this case we are checking if the tree is unbalanced or not also. otherwise we can only check if the difference is positive or negative , if we are checking if(!unbalanced) then we can use >0 instead of 1 and 0< instead of -1 but when we are using only return rotate(node) we have to use 1 and -1 otherwise it will not check whether the tree is unbalanced or not
         if(height(node.left)-height(node.right)>1){
             // left heavy
             if(height(node.left.left)-height(node.left.right)>0){

@@ -68,7 +68,7 @@ public class BST {
     public void populateSorted(int [] nums){
         populateSorted(nums,0,nums.length);
     }
-    public void populateSorted(int [] nums, int start, int end){
+    private void populateSorted(int [] nums, int start, int end){
         if (start >= end) {
             return;
         }

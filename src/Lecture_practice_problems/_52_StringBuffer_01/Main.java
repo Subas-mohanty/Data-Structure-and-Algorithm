@@ -8,7 +8,9 @@ public class Main {
     public static void main(String[] args) {
         // constructor 1
         StringBuffer sb = new StringBuffer();
-        System.out.println(sb.capacity());
+        System.out.println(sb.capacity()); // 16
+        sb.append("hello");
+        System.out.println(sb);
 
         // constructor 2
         StringBuffer sb2 = new StringBuffer("subas mohanty");
@@ -20,7 +22,7 @@ public class Main {
         sb.append("WeMakeDevs");
         sb.append(" is nice!");
 
-        // sb.insert(2, " Rahul ");
+//         sb.insert(2, " Rahul ");
 
         sb.replace(1, 5, "subas");
 
@@ -41,7 +43,6 @@ public class Main {
 //        System.out.println((char)122);
 
         // remove whitespaces
-
         String sentence = "Hi h   hjh  hjkso  siowi     w ";
         System.out.println(sentence);
 

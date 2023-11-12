@@ -2,6 +2,9 @@ package Lecture_practice_problems._55_Heaps;
 
 import java.util.ArrayList;
 
+// heapify: creating a heap from an unsorted array
+// DSA-01 dt:12-11-23
+//https://chat.openai.com/c/880a7adc-a19f-4d5f-902c-ef454a049ed6
 
 //DSA-01 dt:11-11-23
 public class Heap <T extends Comparable<T>> {
@@ -55,6 +58,7 @@ public class Heap <T extends Comparable<T>> {
     }
 
     private void downheap(int index) {
+
         int min=index;
         int left=left(index);
         int right=right(index);
@@ -73,8 +77,18 @@ public class Heap <T extends Comparable<T>> {
         // when the min value is not the current index swap the min with current and call the downheap with min for below subtree
         if(min!=index){
             swap(min,index);
+            downheap(min);
         }
-        downheap(min);
+    }
+
+    // this is heap sort just keep removing elements from the list and add in a new list it will be automatically sorted as we are always removing the smallest element and then re-structuring the tree so that the min element come to the first index
+    // TC: Nlog(N), for every item its taking log(N) and there are N elements
+    public ArrayList<T> heapSort() throws Exception {
+        ArrayList<T> data=new ArrayList<>();
+        while (!list.isEmpty()) {
+            data.add(this.remove());
+        }
+        return data;
     }
 
     // swapping two indices of an arraylist

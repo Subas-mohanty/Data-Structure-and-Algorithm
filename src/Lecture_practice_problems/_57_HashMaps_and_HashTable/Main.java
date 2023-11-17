@@ -41,5 +41,6 @@ public class Main {
         map.put("subu",3);
         map.put("raghu",5);
         System.out.println(map);
+        System.out.println(map.containKey("subas"));
     }
 }

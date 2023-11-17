@@ -42,10 +42,10 @@ public class HashMapGenerics<K, V> {
         }
         for (LinkedList<Entity> entities: old){
             for (Entity entity: entities){
+                // this is gonna put in the new list as we have resized the list and we are using the list variable inside the put function
                 put(entity.key,entity.value);
             }
         }
-
     }
 
     public V get(K key){

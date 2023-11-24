@@ -17,21 +17,21 @@ public class Main {
 //        tree.postOrder();
 
 //        int [] nums={5,8,1,9,4,3};
-        BST tree=new BST();
+//        BST tree=new BST();
 //        tree.populate(nums);
 //        tree.display();
-//        int [] nums={1,2,3,4,5,6};
-//        BST tree=new BST();
-//        tree.populateSorted(nums);
-//        tree.display();
+        int [] nums={1,2,3,4,5,6};
+        BST tree=new BST();
+        tree.populateSorted(nums);
+        tree.display();
 //        tree.preOrder();
 //        System.out.println();
 //        tree.postOrder();
 //        System.out.println();
 //        tree.inOrder();
-        for (int i = 0; i < 33; i++) {
-            tree.insert(i);
-        }
-        tree.display();
+//        for (int i = 0; i < 33; i++) {
+//            tree.insert(i);
+//        }
+//        tree.display();
     }
 }

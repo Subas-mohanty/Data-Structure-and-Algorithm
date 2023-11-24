@@ -1,11 +1,11 @@
 package Lecture_practice_problems._49_BinaryTree_01;
 
 public class BST {
-    private class Node{
-        private int value;
-        private int height;
-        private Node left;
-        private Node right;
+    public class Node{
+        public int value;
+        public int height;
+        public Node left;
+        public Node right;
 
         public Node(int value) {
             this.value = value;

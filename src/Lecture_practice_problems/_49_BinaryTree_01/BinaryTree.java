@@ -1,5 +1,7 @@
 package Lecture_practice_problems._49_BinaryTree_01;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class BinaryTree {
@@ -7,10 +9,11 @@ public class BinaryTree {
 
     }
 
-    public class Node{
+    public static class Node{
         public int value;
         public Node left;
         public Node right;
+        public Node next;
 
         public Node(int value) {
             this.value = value;
@@ -117,5 +120,39 @@ public class BinaryTree {
             System.out.println(node.value);
         }
         prettyDisplay(node.left,level+1);
+    }
+
+
+    public static Node connect(Node root) {
+        if(root==null){
+            return null;
+        }
+        // created a Queue of type TreeNode to store all the TreeNodes
+        Queue<Node> queue=new LinkedList<>();
+        queue.offer(root);
+
+        // when at the end the queue is empty that means all the elements are traversed so we return the answer list
+        Node currentNode=null;
+        while(!queue.isEmpty()){
+            int levelSize=queue.size();
+            for (int i = 0; i < levelSize; i++) {
+                // when the size of the queue is > than 1, we are removing the first element and pointing its next to the next element in the queue
+                if(levelSize>1){
+                    currentNode=queue.poll();
+                    currentNode.next=queue.peek();
+                }
+                else{
+                    currentNode = queue.poll();
+                }
+                if(currentNode.left!=null){
+                    queue.offer(currentNode.left);
+                }
+                if(currentNode.right!=null){
+                    queue.offer(currentNode.right);
+                }
+
+            }
+        }
+        return root;
     }
 }

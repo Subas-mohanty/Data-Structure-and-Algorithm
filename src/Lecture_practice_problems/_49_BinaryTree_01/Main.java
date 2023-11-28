@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-//        Scanner scanner=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
 //        BinaryTree tree = new BinaryTree();
 //        tree.populate(scanner);
 //        tree.prettyDisplay();
@@ -20,9 +20,8 @@ public class Main {
 //        BST tree=new BST();
 //        tree.populate(nums);
 //        tree.display();
-        int [] nums={1,2,3,4,5,6};
-        BST tree=new BST();
-        tree.populateSorted(nums);
+        BinaryTree tree=new BinaryTree();
+        tree.populate(scanner);
         tree.display();
 //        tree.preOrder();
 //        System.out.println();

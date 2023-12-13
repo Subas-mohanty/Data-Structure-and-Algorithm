@@ -20,12 +20,12 @@ public class PreIn {
         if(left>right){
             return null;
         }
-        int current=index[0];
+        int current=preOrder[index[0]];
         index[0]++;
 
         // index of the preorder array's element in the inorder array
-        int inOrderIndex=map.get(preOrder[current]);
-        TreeNode node=new TreeNode(preOrder[current]);
+        int inOrderIndex=map.get(current);
+        TreeNode node=new TreeNode(current);
 
         // we are at the leaf node
         if (left == right) {

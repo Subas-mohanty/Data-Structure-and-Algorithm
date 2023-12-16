@@ -59,5 +59,26 @@ class _06_Populating_next_right_pointer {
             }
             return root;
         }
+        public Node connect2(Node root) {
+            if(root==null){
+                return null;
+            }
+
+            Node leftMost=root;
+
+            while(leftMost.left!=null){
+                Node currentNode = leftMost;
+                // for every level
+                while(currentNode!=null){
+                    currentNode.left.next=currentNode.right;
+                    if(currentNode.next!=null){
+                        currentNode.right.next=currentNode.next.left;
+                    }
+                    currentNode=currentNode.next;
+                }
+                leftMost=leftMost.left;
+            }
+            return root;
+        }
     }
 }

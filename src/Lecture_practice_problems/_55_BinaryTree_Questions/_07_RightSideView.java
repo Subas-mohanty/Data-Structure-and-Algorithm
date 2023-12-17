@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 //https://leetcode.com/problems/binary-tree-right-side-view/
-public class RightSideView {
+public class _07_RightSideView {
     public class TreeNode {
       int val;
       TreeNode left;

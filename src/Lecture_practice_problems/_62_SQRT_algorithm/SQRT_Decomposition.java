@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SQRT_Decomposition {
     public static void main(String[] args) {
-        int[] arr = {1, 3, 5, 2, 7, 6, 1, 4, 8};
+        int[] arr = {1, 3, 5, 2, 7, 6, 1, 4};
         int n = arr.length;
         int sqrt = (int) Math.sqrt(n);
         int block_id = -1;

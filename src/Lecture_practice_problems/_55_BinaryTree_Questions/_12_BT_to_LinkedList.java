@@ -4,7 +4,28 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class _12_BT_to_LinkedList {
+
+//    TC:O(N)
+//    SC:O(1)
     public void flatten(TreeNode root) {
+        TreeNode current = root;
+        while(current!=null){
+            if(current.left!=null){
+                TreeNode temp = current.left;
+                while(temp.right!=null){
+                    temp=temp.right;
+                }
+                temp.right=current.right;
+                current.right=current.left;
+                current.left=null;
+            }
+            current=current.right;
+        }
+    }
+
+    //    TC:O(N)
+    //    SC:O(1)
+    public void flatten2(TreeNode root) {
         if(root == null){
             return;
         }

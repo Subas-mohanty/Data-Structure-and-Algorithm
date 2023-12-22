@@ -1,7 +1,7 @@
 package Lecture_practice_problems._55_BinaryTree_Questions;
 
 public class TreeNode {
-    int val;
+    public int val;
      public TreeNode left;
       public TreeNode right;
       public TreeNode() {}

@@ -10,9 +10,11 @@ public class _13_Valid_BST {
         if(node == null){
             return true;
         }
+        // min is actually the root element and it is for right calls, which means any right element should not be lesser than the min and if so then return false
         if(min!= null && node.val <= min){
             return false;
         }
+        // max is actually the root element and it is for left calls, which means any right element should not be lesser than the min and if so then return false
         if(max!= null && node.val >= max){
             return false;
         }

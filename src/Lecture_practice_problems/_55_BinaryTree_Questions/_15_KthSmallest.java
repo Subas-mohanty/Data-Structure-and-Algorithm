@@ -3,7 +3,7 @@ package Lecture_practice_problems._55_BinaryTree_Questions;
 import java.util.ArrayList;
 
 //https://leetcode.com/problems/kth-smallest-element-in-a-bst/submissions/
-public class KthSmallest {
+public class _15_KthSmallest {
 //    TC: O(N) -- for recursion
 //    SC: O(1)
     private int k;

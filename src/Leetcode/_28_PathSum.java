@@ -41,4 +41,13 @@ public class _28_PathSum {
         }
         return helper(node.left, target, sum+node.val) || helper(node.right, target, sum+node.val);
     }
+    public static boolean hasPathSum2(TreeNode root, int targetSum) {
+        if(root==null){
+            return false;
+        }
+        if(root.val == targetSum && root.left == null && root.right == null){
+            return true;
+        }
+        return hasPathSum2(root.left, targetSum - root.val) || hasPathSum2(root.right, targetSum - root.val);
+    }
 }

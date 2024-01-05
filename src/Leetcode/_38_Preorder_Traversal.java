@@ -8,7 +8,7 @@ import java.util.Stack;
 //TC:O(N) - traversing all nodes once
 //SC: O(N) - for stack
 public class _38_Preorder_Traversal {
-    public class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;

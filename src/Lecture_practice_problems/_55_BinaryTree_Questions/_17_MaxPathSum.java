@@ -15,6 +15,7 @@ public class _17_MaxPathSum {
         int right = helper(node.right);
 
         // this is to ignore the negative numbers
+        // when we have -ve number in the node, we have to ignore them otherwise they will reduce the max sum in their respective path so we have to make them 0
         left=Math.max(left,0);
         right = Math.max(right, 0);
 

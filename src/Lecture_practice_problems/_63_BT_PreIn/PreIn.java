@@ -1,10 +1,11 @@
 package Lecture_practice_problems._63_BT_PreIn;
 
+import Lecture_practice_problems._55_BinaryTree_Questions.TreeNode;
+
 import java.util.HashMap;
 
 //https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 public class PreIn {
-    /*
     public TreeNode buildTree(int[] preOrder, int[] inOrder) {
 
        // storing the inorder arrays value and index in a hashmap, when an element is present in the preorder array that means in the inorder array all the elements to its left will be on the left of the tree and all the element to its right will be on the right of the tree
@@ -36,6 +37,4 @@ public class PreIn {
 
         return node;
     }
-
-     */
 }

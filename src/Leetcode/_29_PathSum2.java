@@ -34,8 +34,7 @@ public class _29_PathSum2 {
         helper(node.right, target - node.val, list, path);
 
         // backtrack, when we are at leaf , left and right will have null so after that we are removing the node from the path list
-//        path.remove(path.size() -1 );
-        path.removeLast();
+        path.remove(path.size() -1 );
     }
 
 

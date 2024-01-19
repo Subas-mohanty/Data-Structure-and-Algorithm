@@ -37,6 +37,7 @@ public class TreeTwoNodeSwap {
             if(first == null){
                 first = prev;
             }
+            // when we find the first violation we are updating second = node but it will be again updated to second swapped node when it will find the second violation
             second = node;
         }
         prev=node;

@@ -30,10 +30,21 @@ public class _01_PhonePad {
             return list;
         }
         char ch = '0';
-        int digit=up.charAt(0)-'0'; // up.charAt returns the ascii value of the 0th element and by subtracting with char 0 we can get the integer value of that character
-        for (int i = (digit-1)*3; i < (digit*3); i++) { // this loop will run 3 times for every number with corresponding alphabet value
-            ch=(char) ('a'+i);// now when we add char 'a' with an integer value it will give an ascii value, then we cast it to char to get the alphabet
-            helper(p+ch,up.substring(1),list);
+        int digit=up.charAt(0)-'0';
+        if (digit == 1) {
+            // 2-2 *digit -> 2-1*digit
+        }
+        if(digit == 7 || digit == 9){
+            for (int i = (digit-1)*3; i < (digit*3); i++) {
+                ch=(char) ('a'+i);
+                helper(p+ch,up.substring(1),list);
+            }
+        }
+        else{
+            for (int i = (digit-2)*3; i < (digit*3); i++) {
+                ch=(char) ('a'+i);
+                helper(p+ch,up.substring(0),list);
+            }
         }
         return list;
     }

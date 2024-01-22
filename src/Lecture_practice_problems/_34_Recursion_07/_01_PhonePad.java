@@ -19,6 +19,7 @@ public class _01_PhonePad {
 //        System.out.println(list);
 
         System.out.println(padRet("","12"));
+        System.out.println('4'-'0');
 
     }
     static ArrayList<String> letterCombinations(String digits) {
@@ -31,20 +32,10 @@ public class _01_PhonePad {
         }
         char ch = '0';
         int digit=up.charAt(0)-'0';
-        if (digit == 1) {
-            // 2-2 *digit -> 2-1*digit
-        }
-        if(digit == 7 || digit == 9){
-            for (int i = (digit-1)*3; i < (digit*3); i++) {
-                ch=(char) ('a'+i);
-                helper(p+ch,up.substring(1),list);
-            }
-        }
-        else{
-            for (int i = (digit-2)*3; i < (digit*3); i++) {
-                ch=(char) ('a'+i);
-                helper(p+ch,up.substring(0),list);
-            }
+        System.out.println(digit);
+        for (int i = (digit-1)*3; i < (digit*3); i++) {
+            ch=(char) ('a'+i);
+            helper(p+ch,up.substring(1),list);
         }
         return list;
     }

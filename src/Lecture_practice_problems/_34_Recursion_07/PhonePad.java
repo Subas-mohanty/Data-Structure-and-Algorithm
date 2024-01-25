@@ -11,6 +11,7 @@ public class PhonePad {
     }
 
     static ArrayList<String> letterCombinations(String digits) {
+        // created a map to store the letters associated with the numbers
         HashMap<Character, String> map = new HashMap<>();
         map.put('2', "abc");
         map.put('3', "def");

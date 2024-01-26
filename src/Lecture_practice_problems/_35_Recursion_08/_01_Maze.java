@@ -8,13 +8,13 @@ public class _01_Maze {
 //        System.out.println(count(51,9));
 //        printPath("",3,3);
 //        System.out.println(pathRet("",3,3));
-//        System.out.println(pathRetDiagonal("",3,3));
+        System.out.println(pathRetDiagonal("",3,3));
         boolean [][] maze={
                 {true,true,true},
                 {true,false,true},
                 {true,true,true},
         };
-        pathRestrictions("",maze,0,0);
+//        pathRestrictions("",maze,0,0);
     }
     static int count(int row, int col){
         if (row == 1 || col == 1) {
@@ -52,23 +52,25 @@ public class _01_Maze {
         return list;
     }
     static ArrayList<String> pathRetDiagonal(String p,int r, int c){
+        ArrayList<String> list=new ArrayList<>(); // instead of writing it in two places we can do it like this
         if(r==1 && c==1){
-            ArrayList<String> list=new ArrayList<>();
+//            ArrayList<String> list=new ArrayList<>();
             list.add(p);
             return list;
         }
-        ArrayList<String> list=new ArrayList<>();
+//        ArrayList<String> list=new ArrayList<>();
 //        if (c > 3) {
 //            list.addAll(pathRetDiagonal(p+'L',r,c+1));
 //        }
+        // this is for diagonal , we can't move diagonally if we are at last row or col , so row and col both should be greater than 1
         if (r > 1 && c > 1) {
-            list.addAll(pathRetDiagonal(p+'D',r-1,c-1));
+            list.addAll(pathRetDiagonal(p+'d',r-1,c-1));
         }
         if (r > 1) {
-            list.addAll(pathRetDiagonal(p+'V',r-1,c));
+            list.addAll(pathRetDiagonal(p+'D',r-1,c));
         }
         if (c > 1) {
-            list.addAll(pathRetDiagonal(p+'H',r,c-1));
+            list.addAll(pathRetDiagonal(p+'R',r,c-1));
         }
         return list;
     }

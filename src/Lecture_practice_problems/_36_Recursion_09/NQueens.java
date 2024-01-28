@@ -12,7 +12,7 @@ public class NQueens {
 //        };
         int n = 4;
         boolean [][] board = new boolean[n][n];
-//        System.out.println(queens(board,0));
+        System.out.println(queens(board,0));
         List<List<String>> ans = solveNQueens(4);
         for(List<String> list : ans){
             System.out.println(list);
@@ -65,10 +65,10 @@ public class NQueens {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board.length; j++) {
                 if(board[i][j]){
-                    System.out.print("Q");
+                    System.out.print("Q ");
                 }
                 else{
-                    System.out.print("X");
+                    System.out.print("X ");
                 }
             }
             System.out.println();

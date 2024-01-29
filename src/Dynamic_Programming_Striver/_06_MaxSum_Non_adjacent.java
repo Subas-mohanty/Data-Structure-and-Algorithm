@@ -24,17 +24,34 @@ public class _06_MaxSum_Non_adjacent {
         return dp[index]=Math.max(pick, notPick);
     }
     // bottom up tabulation approach
-    public static int maxSum(int index, int [] arr, int [] dp){
-        dp[0]= arr[0];
-        int neg = 0; // we can't store negative index in array so declaring a variable for that
+    public static int helper2(int index, int [] arr, int [] dp){
+      int n = arr.length;
+      dp[0]= arr[0];
 
-        for (int i = 1; i < arr.length; i++) {
-            int pick = arr[i];
-            if(i > 1) pick += dp[i - 2]; // if i is 1 or less then the value of dp[i - 2] will be 0 , so no need to add that in the answer
-            int notPick = dp[0] + dp[i - 1];
-            dp[i] = Math.max(pick, notPick);
-        }
-        return dp[arr.length - 1];
+      // i think we don't need this variable , yeah we don't need it 
+      int neg = 0; // we can't store negative index in array so declaring a variable for that
+
+      for (int i = 1; i < n; i++) {
+        int pick = arr[i];
+        if(i > 1) pick += dp[i - 2]; // if i is 1 or less then the value of dp[i - 2] will be 0 , so no need to add that in the answer
+        int notPick = 0 + dp[i - 1]; // if we doesn't pick the current index and pick its previous index then we don't need to add anything in that because it will already take care of the previous ones and dp[i] would have updated correctly
+        dp[i] = Math.max(pick, notPick);
+      }
+      return dp[n - 1];
     }
 
+    public static int helper3(int [] arr){
+      int n = arr.length;
+      int prev = arr[0];
+      int prev2 = 0;
+      for (int i = 1; i < n; i++) {
+        int pick = arr[i];
+        if(i > 1) pick += prev2; // if i is 1 or less then the value of dp[i - 2] will be 0 , so no need to add that in the answer
+        int notPick = 0 + prev;
+        int ans = Math.max(pick, notPick);
+        prev2 = prev;
+        prev = ans;
+      }
+      return prev;
+    }
 }

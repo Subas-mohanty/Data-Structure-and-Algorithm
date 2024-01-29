@@ -15,6 +15,7 @@ public class _06_MaxSum_Non_adjacent {
 
         if(dp[index] != -1) return dp[index];
 
+        // this pick and not pick is the subsequence pattern we learned in recursion
         // do all stuffs on index , either we take the index and take the element behind two index
         int pick = arr[index]+helper(index-2, arr, dp);
         // or we leave/ no pick current index and take its previous index
@@ -22,4 +23,18 @@ public class _06_MaxSum_Non_adjacent {
 
         return dp[index]=Math.max(pick, notPick);
     }
+    // bottom up tabulation approach
+    public static int maxSum(int index, int [] arr, int [] dp){
+        dp[0]= arr[0];
+        int neg = 0; // we can't store negative index in array so declaring a variable for that
+
+        for (int i = 1; i < arr.length; i++) {
+            int pick = arr[i];
+            if(i > 1) pick += dp[i - 2]; // if i is 1 or less then the value of dp[i - 2] will be 0 , so no need to add that in the answer
+            int notPick = dp[0] + dp[i - 1];
+            dp[i] = Math.max(pick, notPick);
+        }
+        return dp[arr.length - 1];
+    }
+
 }

@@ -8,8 +8,8 @@ public class _07_House_Robber2 {
     System.out.println(rob2(arr));
     // the only thing that we need to change in 6th maxSum is here we can't take first and last element together, so first we take the first element and ignore the last and calculate the maxSum then again we ignore the first one and take the last one and calculate the maxSum.
     // Now for the answer we take max of these two
-    int [] first = Arrays.copyOfRange(arr, 1, 8);
-    int [] second = Arrays.copyOfRange(arr, 0, 7);
+    int [] first = Arrays.copyOfRange(arr, 1, arr.length);
+    int [] second = Arrays.copyOfRange(arr, 0, arr.length-1);
     int ans = Math.max(rob(first), rob(second));
     System.out.println(ans);
   }

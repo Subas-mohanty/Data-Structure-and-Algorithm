@@ -1,3 +1,7 @@
+package Dynamic_Programming_Striver;
+
+import java.util.Arrays;
+
 //https://leetcode.com/problems/unique-paths/description/
 public class _09_UniquePaths {
   public static void main(String[] args) {
@@ -40,11 +44,11 @@ public class _09_UniquePaths {
 
   // TC -: O(m*n)
   // SC -: O(m*n) -> only for the dp array
-  static int count(int row, int col, int [][] dp){
+  static int count2(int row, int col, int [][] dp){
     dp[0][0]= 0;
 
     for (int i = 0; i <= row; i++) {
-      for (int j = 0; j <= col; i++) {
+      for (int j = 0; j <= col; j++) {
         if( i == 0 && j == 0){
           dp[0][0] = 0;
         }

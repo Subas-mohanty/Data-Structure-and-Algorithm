@@ -20,6 +20,7 @@ public class _10_MinPathSum {
         }
         return count(0, 0,grid, dp);
     }
+    // memoization
     static int count(int row, int col,int [][] grid, int [][] dp){
         if (row == grid.length-1 && col == grid[0].length-1) {
             return grid[row][col];

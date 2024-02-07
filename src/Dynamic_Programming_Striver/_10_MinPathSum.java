@@ -18,9 +18,13 @@ public class _10_MinPathSum {
         for(int [] row : dp){
             Arrays.fill(row, -1);
         }
-        return count(0, 0,grid, dp);
+//        return count(0, 0,grid, dp);
+        return count2(m-1, n-1, grid, dp);
     }
     // memoization
+    // Tabulation method
+    // TC : O(m*n)
+    // SC : O(m*n) + O(m*n) recursion stack + space for the dp array
     static int count(int row, int col,int [][] grid, int [][] dp){
         if (row == grid.length-1 && col == grid[0].length-1) {
             return grid[row][col];
@@ -37,5 +41,27 @@ public class _10_MinPathSum {
             down = grid[row][col] + count( row +1, col,grid, dp);
         }
         return dp[row][col] = Math.min(down, right);
+    }
+    // Tabulation method
+    // TC : O(m*n)
+    // SC : O(m*n) only the dp array space no recursion stack space
+    static int count2(int row, int col,int [][] grid, int [][] dp){
+        for (int i = 0; i <= row; i++) {
+            for (int j = 0; j <= col; j++) {
+                if(i == 0 &&  j==0) {
+                    dp[0][0] = grid[0][0];
+                }
+                else{
+                    int left = Integer.MAX_VALUE;
+                    int up = Integer.MAX_VALUE;
+                    if(j > 0) left = grid[i][j] + dp[i][j-1];
+                    if(i > 0) up = grid[i][j] + dp[i-1][j];
+                    // we are storing the answer of each index of the grid in the dp array. For Ex- the answer for grid[1][2] will be at dp[1][2]
+                    dp[i][j] = Math.min(left, up);
+                }
+            }
+        }
+        // the final answer will be at dp[row][col]
+        return dp[row][col];
     }
 }

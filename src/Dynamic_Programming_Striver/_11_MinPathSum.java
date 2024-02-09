@@ -2,7 +2,7 @@ package Dynamic_Programming_Striver;
 
 import java.util.Arrays;
 //https://leetcode.com/problems/minimum-path-sum/description/
-public class _10_MinPathSum {
+public class _11_MinPathSum {
     public static void main(String[] args) {
         int [][] grid = {
                 {1,3,1},

@@ -34,15 +34,15 @@ public class _12_Triangle_min_pathSum{
         return dp[row][col] = Math.min(down, diag);
     }
     // tabulation doesn't mean always starts from 0 , instead if the recursion is starting from 0 then the tabulation should be start from length-1, it will always be opposite to recursion because recursion is always top down
-    public static int sum2(int [][] grid, int row, int col, int [][] dp){
+    public static int sum2(int [][] grid, int row, int col, int [][] dp) {
         for (int i = 0; i < row; i++) {
-            dp[row-1][i] = grid[row-1][i];
+            dp[row - 1][i] = grid[row - 1][i];
         }
-        for (int i = row-2; i >= 0; i--) {
+        for (int i = row - 2; i >= 0; i--) {
             for (int j = i; j >= 0; j--) {
-                    int down = grid[i][j] + dp[i+1][j];
-                    int diag = grid[i][j] + dp[i+1][j+1];
-                    dp[i][j] = Math.min(down, diag);
+                int down = grid[i][j] + dp[i + 1][j];
+                int diag = grid[i][j] + dp[i + 1][j + 1];
+                dp[i][j] = Math.min(down, diag);
             }
         }
         return dp[0][0];

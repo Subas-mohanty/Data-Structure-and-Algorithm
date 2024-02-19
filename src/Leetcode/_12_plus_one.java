@@ -18,7 +18,7 @@ public class _12_plus_one {
             digits[i] = 0;
         }
         // if the number is like 9, 99 or 999 then this will execute when adding 1 will create 1 more digits
-        digits = new int[digits.length + 1];
+        digits = new int[digits.length + 1]; // if this runs that means the number has all 9 in it, so we have all the elements as 0 in the digits array so when we initialize again it doesn't change anything as int array is initialized with 0 by default, and at the beginning just add another 1 for the extra digit.
         digits[0] = 1;
         return digits;
     }

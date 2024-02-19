@@ -1,3 +1,5 @@
+package Leetcode;
+
 import java.util.Arrays;
 //https://leetcode.com/problems/squares-of-a-sorted-array/description/
 // The approach is -: the question states the given array is sorted , so it's quite obvious that the elements whose absolute value is big will be at the edge and while we move towards the center the value will decrease .

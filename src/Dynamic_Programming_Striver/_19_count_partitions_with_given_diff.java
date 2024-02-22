@@ -5,9 +5,9 @@ import java.util.Arrays;
 
 public class _19_count_partitions_with_given_diff {
     public static void main(String[] args) {
-        int [] arr = {2,0,8,5,4};
+        int [] arr = {1,1,1,1};
         int n = arr.length;
-        int diff = 15;
+        int diff = 0;
 
         // total sum of the array
         int sum = 0;
@@ -33,7 +33,10 @@ public class _19_count_partitions_with_given_diff {
         }
         int [][] dp = new int[n][target+1];
         for(int [] a : dp) Arrays.fill(a,-1);
-        System.out.println(sum(arr, n-2, target, dp, mod));
+        System.out.println(sum(arr, n-1, target, dp, mod));
+
+        int [][] Dp = new int[n][target+1];
+        System.out.println(sum2(arr, target, Dp, mod));
     }
 
     // TC : O(m*n) + O(n) --> for the grid and the array sum
@@ -56,5 +59,26 @@ public class _19_count_partitions_with_given_diff {
         if(target >= arr[index]) pick = sum(arr, index-1, target-arr[index], dp, mod);
 
         return dp[index][target] = (pick+notPick) % mod;
+    }
+    // Tabulation
+    // TC : O(m*n)
+    // SC : O(m*n) --> for the dp array
+    public static int sum2(int [] arr, int target, int [][] dp, int mod){
+        int n = arr.length;
+        if(arr[0] == 0 ) dp[0][0] = 2;
+        else dp[0][0] = 1;
+
+//        if(arr[0] != 0 && target>= arr[0]) dp[0][arr[0]] = arr[0] == target ? 1 : 0; // we can't do it here because in this case no matter what the arr[0] is we will add 1 for that target in the dp array, because its not tabulation, in recursion we can do like that so when that function call arrives the statement will be true but for tabulation approach we can't do like this
+        if(arr[0] != 0 && target>= arr[0]) dp[0][arr[0]] = 1;
+
+        for(int i = 1; i<n; i++){
+            for (int j = 0; j <= target; j++) {
+                int notPick = dp[i-1][j];
+                int pick = 0;
+                if(j >= arr[i]) pick = dp[i-1][j -arr[i]];
+                dp[i][j] = (notPick + pick) % mod;
+            }
+        }
+        return dp[n-1][target];
     }
 }

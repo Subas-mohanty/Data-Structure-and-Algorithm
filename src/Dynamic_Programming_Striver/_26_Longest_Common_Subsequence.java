@@ -43,7 +43,7 @@ public class _26_Longest_Common_Subsequence {
         return dp[ind1][ind2] = Math.max(lcs2(s1, s2, ind1 - 1, ind2, dp), lcs2(s1, s2, ind1, ind2 - 1, dp));
     }
 
-    // in this function we are shifting the indexes so we will pass n and m instead of n-1 and m-1, and also we have to declare the dp array of size n+1 and m+1
+    // in this function we are shifting the indexes so, we will pass n and m instead of n-1 and m-1, and also we have to declare the dp array of size n+1 and m+1
     public static int lcs3(String s1, String s2, int ind1, int ind2, int [][] dp){
         // now both the index will be 0 instead of -1
         if(ind1 == 0 || ind2 == 0) return 0;
@@ -54,11 +54,13 @@ public class _26_Longest_Common_Subsequence {
         }
         return dp[ind1][ind2] = Math.max(lcs3(s1, s2, ind1 - 1, ind2, dp), lcs3(s1, s2, ind1, ind2 - 1, dp));
     }
+    // here also we are using 1 based indexing like the above memoization one
     public static int lcs4(String s1, String s2, int [][] dp){
         int l1 = s1.length();
         int l2 = s2.length();
+
+        for(int i = 0; i <= l2; i++) dp[0][i] = 0; // when index1 = 0 we have to fill for all values of string s2 so, we took l2 and vice-versa for index2 = 0
        for(int i = 0; i <= l1; i++) dp[i][0] = 0;
-       for(int i = 0; i <= l2; i++) dp[0][i] = 0; // when index1 = 0 we have to fill for all values of string s2 so we took l2 and vice-versa for index2 = 0
 
        for (int i = 1; i <= l1; i++) {
            for (int j = 1; j <= l2; j++) {

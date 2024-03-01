@@ -7,8 +7,8 @@ import java.util.Arrays;
 
 public class _26_Longest_Common_Subsequence {
     public static void main(String[] args) {
-        String s1 = "abcde";
-        String s2 = "ace";
+        String s1 = "bbabcbcab";
+        String s2 = "bacbcbabb";
         int length1 = s1.length();
         int length2 = s2.length();
         System.out.println(lcs(s1, s2, length1 - 1, length2 - 1));

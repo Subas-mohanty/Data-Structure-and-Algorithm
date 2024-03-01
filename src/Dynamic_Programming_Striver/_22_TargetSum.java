@@ -7,9 +7,9 @@ import java.util.Arrays;
 
 public class _22_TargetSum {
   public static void main(String[] args) {
-      int [] arr = {1,1,1,1};
+      int [] arr = {1};
       int n = arr.length;
-      int diff = 0;
+      int diff = 1;
 
       // total sum of the array
       int sum = 0;

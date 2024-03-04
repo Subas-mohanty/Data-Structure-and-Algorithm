@@ -8,6 +8,7 @@ public class _10_setbits {
         System.out.println(setbits(n));
     }
 
+    // returns number of setbits in a number
     private static int setbits(int n) {
         int count=0;
         while (n > 0) {

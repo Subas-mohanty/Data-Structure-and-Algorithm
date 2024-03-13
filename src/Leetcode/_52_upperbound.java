@@ -1,6 +1,6 @@
 package Leetcode;
 
-public class x {
+public class _52_upperbound {
     public static void main(String[] args) {
         int[] arr = {1, 2, 5, 6, 10};
         System.out.println(upperBound(arr, 10, arr.length));

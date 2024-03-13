@@ -1,6 +1,6 @@
 package Leetcode;
 
-public class Solution {
+public class _51_lowerbound {
     public static int upperBound(int []arr, int x, int n){
         return search(arr, n, x);
     }

@@ -5,16 +5,17 @@ import java.util.Arrays;
 public class _04_K_Steps_Frog_Jump {
     public static void main(String [] args){
         int [] arr = {30, 10, 60, 10, 60, 50};
+        int n = arr.length;
         int steps = 5;
-        int ans = jump(arr.length, arr, steps);
-        System.out.println(ans);
-    }
-    static int jump(int n, int [] arr, int k){
-        // return helper(n-1, arr, k);
+
+        System.out.println(helper(n-1, arr, steps));
 
         int [] dp = new int[n];
         Arrays.fill(dp, -1);
-        return helper3(n-1, arr, k, dp);
+        System.out.println(helper2(n-1, arr, steps, dp));
+
+        int [] Dp = new int[n];
+        System.out.println(helper3(n-1, arr, steps, Dp));
     }
     static int helper(int index, int [] arr, int k){
         if(index == 0) return 0;
@@ -31,6 +32,7 @@ public class _04_K_Steps_Frog_Jump {
         }
         return minSteps;
     }
+
     // memoization
     // TC: O(N*K)
     // SC : O(N+N) for the dp array and for recursion stack

@@ -13,7 +13,9 @@ public class _42_longest_increasing_subsequences {
         System.out.println(lis2(arr, 0, -1, dp));
 
         int [][] Dp = new int[length+1][length+1];
-//        System.out.println(lis3(arr, Dp));
+        System.out.println(lis3(arr, Dp));
+
+        System.out.println(lis34(arr));
     }
     // SC : O(n) -- for the recursion stack space
     // TC : O(2^n) -- every element has two options
@@ -39,5 +41,46 @@ public class _42_longest_increasing_subsequences {
 //             when we found a element that we can add to the subsequence we add 1 to the length
         if(prev == -1 || arr[ind] > arr[prev]) take = 1 + lis2(arr, ind+1, ind, dp);
         return dp[ind][prev+1] = Math.max(notTake, take);
+    }
+    public static int lis3(int [] arr, int [][] dp){
+        int n = arr.length;
+        for (int i = 0; i <n ; i++){
+//            dp[n][i] = 0;
+            dp[i][0] = 1;
+        }
+
+//        for (int i = n-1; i >= 0 ; i--) {
+//            for (int j = -1; j < n ; j++) {
+//                int notTake = dp[i+1][j+1];
+//                int take = 0;
+//                if(j == -1 || arr[i] > arr[j]) take = 1 + dp[i+1][i+1];
+//                dp[i][j+1] = Math.max(notTake, take);
+//            }
+//        }
+        for (int i = n-1; i >= 0 ; i--) {
+            for (int j = i-1; j >= -1; j--) {
+                int notTake = dp[i + 1][j+1];
+                int take = 0;
+                if (j == -1 || arr[i] > arr[j]) take = 1 + dp[i + 1][i+1];
+                dp[i][j+1] = Math.max(notTake, take);
+            }
+        }
+            return dp[0][0];
+    }
+    public static int lis34(int [] arr){
+        int n = arr.length;
+        int [] dp = new int[n];
+        Arrays.fill(dp, 1);
+        int max = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+               if(arr[j] < arr[i]){
+                   max = Math.max(dp[i], 1 + dp[j]);
+                   dp[i] = max;
+               }
+            }
+        }
+        return max;
     }
 }

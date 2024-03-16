@@ -15,7 +15,7 @@ public class _42_longest_increasing_subsequences {
         int [][] Dp = new int[length+1][length+1];
         System.out.println(lis3(arr, Dp));
 
-        System.out.println(lis34(arr));
+        System.out.println(lis3(arr));
     }
     // SC : O(n) -- for the recursion stack space
     // TC : O(2^n) -- every element has two options
@@ -67,7 +67,7 @@ public class _42_longest_increasing_subsequences {
         }
             return dp[0][0];
     }
-    public static int lis34(int [] arr){
+    public static int lis3(int [] arr){
         int n = arr.length;
         int [] dp = new int[n];
         Arrays.fill(dp, 1);

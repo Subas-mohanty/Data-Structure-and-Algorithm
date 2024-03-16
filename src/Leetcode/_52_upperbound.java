@@ -1,5 +1,5 @@
 package Leetcode;
-
+// strictly upperbound , needs the next greater elements index, even if the element is present then also it needs the next greater elements index
 public class _52_upperbound {
     public static void main(String[] args) {
         int[] arr = {1, 2, 5, 6, 10};

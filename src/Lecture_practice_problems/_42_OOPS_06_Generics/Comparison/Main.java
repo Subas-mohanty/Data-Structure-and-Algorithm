@@ -1,6 +1,7 @@
 package Lecture_practice_problems._42_OOPS_06_Generics.Comparison;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,7 +13,7 @@ public class Main {
 
         Student[] list={subas,manas,rohan,saurav,satya};
         System.out.println(Arrays.toString(list));
-        Arrays.sort(list);
+        Arrays.sort(list, new StudentComparator());
         System.out.println(Arrays.toString(list));
 
 //        if(subas.compareTo(manas)>0){

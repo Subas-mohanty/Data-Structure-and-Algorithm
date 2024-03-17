@@ -25,7 +25,7 @@ public class _42_longest_increasing_subsequences {
         int take = 0;
         // for the first time the prev will be -1 so to avoid arr[prev] == error we do like this
         if(prev == -1) take = 1 + lis(arr, ind+1, ind);
-        // when we found a element that we can add to the subsequence we add 1 to the length
+        // when we found an element that we can add to the subsequence we add 1 to the length
         else if(arr[ind] > arr[prev]) take = 1 + lis(arr, ind+1, ind);
         return Math.max(notTake, take);
     }

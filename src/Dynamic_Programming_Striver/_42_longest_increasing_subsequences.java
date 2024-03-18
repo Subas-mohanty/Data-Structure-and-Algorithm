@@ -76,8 +76,14 @@ public class _42_longest_increasing_subsequences {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < i; j++) {
                if(arr[j] < arr[i]){
-                   max = Math.max(dp[i], 1 + dp[j]);
-                   dp[i] = max;
+                   // it has a bug, because we are updating dp[i] with current elements max, but we forget that we have a max previously, we have to take care of that as well
+
+//                   max = Math.max(dp[i], 1 + dp[j]);
+//                   dp[i] = max;
+
+                   // this is the right one
+                   dp[i] = Math.max(dp[i], 1 + dp[j]);
+                   max = Math.max(dp[i], max);
                }
             }
         }

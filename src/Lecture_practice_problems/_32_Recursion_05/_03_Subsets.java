@@ -9,8 +9,24 @@ public class _03_Subsets {
         int [] arr={1,2,3};
         List<List<Integer>> ans=subset(arr);
         for(List<Integer> list: ans){
-            System.out.println(list);
+            System.out.print(list);
         }
+        System.out.println();
+
+        List<List<Integer>> list = new ArrayList<>();
+        helper(arr, list, new ArrayList<>(), 0);
+        System.out.println(list);
+    }
+
+    public static void helper(int[] nums, List<List<Integer>> list, List<Integer> temp, int ind){
+        if(ind == nums.length){
+            list.add(new ArrayList(temp));
+            return;
+        }
+        helper(nums, list, temp, ind+1); // not take
+        temp.add(nums[ind]); // taking the value
+        helper(nums, list, temp, ind+1);
+        temp.remove(temp.size()-1); // backtrack to remove the value
     }
     // TC : O(N*2^N) --> No. of elements * total no. of subsets
     // SC : O(N*2^N) --> size of each list * no of list in the outer/answer array(no. of subsets)

@@ -1,7 +1,10 @@
 package Dynamic_Programming_Striver;
 
 import java.util.Arrays;
-//https://www.codingninjas.com/studio/problems/triangle_1229398?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos&leftPanelTabValue=SUBMISSION
+import java.util.List;
+//https://leetcode.com/problems/triangle/description/
+//https://www.codingninjas.com/studio/problemss/triangle_1229398?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos&leftPanelTabValue=SUBMISSION
+
 public class _12_Triangle_min_pathSum{
     public static void main(String[] args) {
         int [][] grid = {
@@ -46,5 +49,19 @@ public class _12_Triangle_min_pathSum{
             }
         }
         return dp[0][0];
+    }
+    public int minimumTotal(List<List<Integer>> grid) {
+        int [][] dp = new int[grid.size()][grid.size()];
+        for(int [] a : dp) Arrays.fill(a, -10001);
+        return f(grid, 0, 0, dp);
+    }
+    public static int f(List<List<Integer>> grid, int row, int col, int [][] dp){
+        if(row == grid.size()) return 0;
+
+        if(dp[row][col] != -10001) return dp[row][col];
+
+        int down = grid.get(row).get(col) + f(grid, row+1, col, dp);
+        int diag = grid.get(row).get(col) + f(grid, row+1, col+1, dp);
+        return dp[row][col] = Math.min(down, diag);
     }
 }

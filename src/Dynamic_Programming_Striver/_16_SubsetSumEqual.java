@@ -2,6 +2,7 @@ package Dynamic_Programming_Striver;
 
 import java.util.Arrays;
 //https://bit.ly/34iIIsH
+//https://leetcode.com/problems/partition-equal-subset-sum/description/
 
 public class _16_SubsetSumEqual {
   public static void main(String[] args) {

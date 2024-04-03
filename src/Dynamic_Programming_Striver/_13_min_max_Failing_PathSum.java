@@ -22,6 +22,10 @@ public class _13_min_max_Failing_PathSum {
             min= Math.min(min, sum(grid, 0, i, dp));
         }
         System.out.println(min);
+
+        int [][] Dp = new int[m][n];
+        System.out.println(helper2(grid, Dp));
+
         System.out.println(sum2(grid, dp));
     }
     // this is the memoization method but in some cases like this the memoization also gives TLE(Time Limit Exceed) error so, we have to do it using the tabulation method
@@ -42,6 +46,31 @@ public class _13_min_max_Failing_PathSum {
         if(row < m-1 && col < n-1)  rd = grid[row][col] + sum(grid, row+1, col+1, dp);
 
         return dp[row][col] = Math.min(down, Math.min(ld, rd));
+    }
+    public static int helper2(int [][] grid, int [][] dp){
+        int n = grid.length;
+        int m = grid[0].length;
+
+        for(int i = 0; i < m; i++) dp[n-1][i] = grid[n-1][i];
+
+        for(int i = n-2; i >= 0; i--){
+            for(int j = m-1; j>= 0; j--){
+                int leftUp = (int) 1e8;
+                int rightUp = (int) 1e8;
+                int up = (int) 1e8;
+
+                if(i < n-1) up = grid[i][j] + dp[i+1][j];
+                if(j > 0) leftUp = grid[i][j] + dp[i+1][j-1];
+                if(j < m-1) rightUp = grid[i][j] + dp[i+1][j+1];
+
+                dp[i][j] = Math.min(leftUp, Math.min(rightUp, up));
+            }
+        }
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < m; i++) {
+            min = Math.min(min, dp[0][i]);
+        }
+        return min;
     }
     public static int sum2(int [][] grid, int [][] dp){
         int m = grid.length;

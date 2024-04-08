@@ -4,16 +4,19 @@ import java.util.Arrays;
 
 public class _18_countSubsetWithSumK {
     public static void main(String[] args) {
-        int [] arr = {0,0,1};
+        int [] arr = {12,1,3};
         int n = arr.length;
-        int target = 1;
+        int target = 4;
         // if the array contains negative values then we can't store them in the dp array as it will be a negative index in the dp array, instead we can use HashMap
         int [][] dp = new int[n][target+1];
         for(int [] a : dp) Arrays.fill(a,-1);
 
         System.out.println(findWays(arr, n-1, target));
         System.out.println(findWays2(arr, n-1, target, dp));
-        System.out.println(findWays3(arr, target, dp));
+
+
+        int [][] Dp = new int[n][target+1];
+        System.out.println(findWays3(arr, target, Dp));
     }
     // Normal recursion
     // TC : O(2^n)
@@ -45,8 +48,9 @@ public class _18_countSubsetWithSumK {
         if (tar == 0){
             return 1;
         }
-        if(index ==0) return tar == arr[0] ? 1 :0 ;
+//        if(index ==0) return tar == arr[0] ? 1 :0 ;
 
+        if(index < 0) return 0;
         if(dp[index][tar] != -1) return dp[index][tar];
 
         int notPick = findWays2(arr, index-1, tar, dp);
@@ -64,12 +68,13 @@ public class _18_countSubsetWithSumK {
         for(int i = 0; i< n; i++){
             dp[i][0] = 1;
         }
-        if(target>= arr[0]) dp[0][arr[0]] = arr[0] == target ? 1 : 0;
+
+        if(target>= arr[0]) dp[0][arr[0]] = 1;
         for(int i = 1; i<n; i++){
-            for (int j = 1; j < target; j++) {
+            for (int j = 0; j <= target; j++) {
                 int notPick = dp[i-1][j];
                 int pick = 0;
-                if(j >= arr[i]) pick = dp[i-1][target-arr[i]];
+                if(j >= arr[i]) pick = dp[i-1][j-arr[i]];
                 dp[i][j] = notPick + pick;
             }
         }

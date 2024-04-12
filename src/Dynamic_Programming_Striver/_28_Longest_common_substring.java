@@ -13,6 +13,25 @@ public class _28_Longest_common_substring {
         int [][] Dp = new int[ind1+1][ind2+1];
         System.out.println(print(s1, s2, Dp));
     }
+
+    // recursion code
+    public static int lcs(String s1, String s2, int len1, int len2, int count) {
+        // Base case: if either string is empty, return the count
+        if (len1 < 0 || len2 < 0)
+            return count;
+
+        // If the last characters of both strings match
+        if (s1.charAt(len1) == s2.charAt(len2)) {
+            count = lcs(s1, s2, len1 - 1, len2 - 1, count + 1);
+        }
+
+        // Check the substring excluding the last character of s1 and s2
+        count = Math.max(count, Math.max(lcs(s1, s2, len1 - 1, len2, 0), lcs(s1, s2, len1, len2 - 1, 0)));
+
+        return count;
+    }
+
+
     // TC : O(m*n)
     // SC : O(m*n) for the dp array
     public static int print(String s1, String s2, int [][] dp){

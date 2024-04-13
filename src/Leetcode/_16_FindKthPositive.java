@@ -2,8 +2,8 @@ package Leetcode;
 
 public class _16_FindKthPositive {
     public static void main(String[] args) {
-        int [] arr={2,3,4,7,11};
-        int k=5;
+        int [] arr={2,4,5,6,7,8,9};
+        int k=4;
         int ans=findKthPositive(arr,k);
         System.out.println(ans);
     }

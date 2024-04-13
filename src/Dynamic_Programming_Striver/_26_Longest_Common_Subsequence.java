@@ -19,7 +19,28 @@ public class _26_Longest_Common_Subsequence {
 
         int [][] Dp = new int[length1+1][length2+1];
         System.out.println(lcs4(s1, s2, Dp));
+
+        int [][] ans = new int[length1+1][length2+1];
+        System.out.println(f(s1, s2, Dp, length1,length2));
     }
+
+
+    public static int f(String s1, String s2, int [][] dp, int l1, int l2) {
+        for (int i = 1; i <= l1 ; i++) {
+            for (int j = 1; j <= l2; j++) {
+                if(s1.charAt(i-1) == s2.charAt(j-1)){
+                    dp[i][j] = 1 + dp[i-1][j-1];
+                }
+                else {
+                    dp[i][j] = Math.max(dp[i-1][j] , dp[i][j-1]);
+                }
+            }
+        }
+        return dp[l1][l2];
+    }
+
+
+
     // TC : 2^n * 2^m --> which is exponential
     // SC : O(m+n) --> for the recursion stack , we put one index as same and move the other one till the start so
     public static int lcs(String s1, String s2, int ind1, int ind2){

@@ -10,6 +10,7 @@ public class _28_Longest_common_substring {
         int ind1 = s1.length();
         int ind2 = s2.length();
 
+        System.out.println(lcs(s1, s2, ind1-1, ind2-1, 0));
         int [][] Dp = new int[ind1+1][ind2+1];
         System.out.println(print(s1, s2, Dp));
     }

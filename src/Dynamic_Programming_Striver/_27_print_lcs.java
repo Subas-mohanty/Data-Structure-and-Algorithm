@@ -14,7 +14,7 @@ public class _27_print_lcs {
         int ind2 = s2.length();
         String s = "";
         print(s1, s2, ind1-1, ind2-1, s);
-//        System.out.println(ans);
+        System.out.println(ans);
 
         int [][] dp = new int[ind1+1][ind2+1];
         System.out.println(print2(s1, s2, dp));

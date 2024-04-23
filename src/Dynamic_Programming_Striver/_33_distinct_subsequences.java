@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class _33_distinct_subsequences {
     public static void main(String[] args) {
-       String s1 = "babgbag";
-       String s2 = "bag";
+       String s1 = "rabbbit";
+       String s2 = "rabbit";
        int i = s1.length();
        int j = s2.length();
 
@@ -25,6 +25,18 @@ public class _33_distinct_subsequences {
             return distinct(s1, s2, i-1, j-1) + distinct(s1, s2, i-1, j);
         }
         return distinct(s1, s2, i-1, j);
+    }
+
+
+    public static int f(String s, String t, String b, int i){
+        if(i == s.length()) {
+            if(b.equals(t)) return 1;
+            else return 0;
+        }
+        int notTake = f(s, t, b, i+1);
+        int take = f(s, t, b+s.charAt(i), i+1);
+
+        return take + notTake;
     }
     public static int distinct2(String s1, String s2, int i, int j, int [][] dp){
         if(j<0) return 1;
@@ -55,5 +67,22 @@ public class _33_distinct_subsequences {
             System.out.println();
         }
         return dp[n][m];
+    }
+    public static int func(String s, String t){
+        int n = s.length();
+        int m = t.length();
+
+        int [][] dp = new int[n+1][m+1];
+        for(int i = 0; i<= n; i++) dp[i][m] = 1;
+
+        for (int i = n-1; i >= 0; i--) {
+            for (int j = m-1; j >= 0; j--) {
+                if(s.charAt(i) == t.charAt(j)){
+                    dp[i][j] = dp[i+1][j+1] + dp[i+1][j];
+                }
+                else dp[i][j] = dp[i+1][j];
+            }
+        }
+        return dp[0][0];
     }
 }

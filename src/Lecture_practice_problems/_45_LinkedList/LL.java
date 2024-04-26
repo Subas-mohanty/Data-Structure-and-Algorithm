@@ -263,6 +263,24 @@ public class LL {
         System.out.println(fast); // this is null in case there is only two elements are present and no cycle is present
         return 0;
     }
+
+    public ListNode detectCycle(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head;
+        int count = 0;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast= fast.next.next;
+            if(slow == fast) break;
+        }
+        ListNode temp = head;
+        while(temp != null){
+            temp = temp.next;
+            slow = slow.next;
+            if(slow == temp) return slow;
+        }
+        return null;
+    }
     public Node detectCycle(Node head) {
         int length=0;
         Node fast=head;

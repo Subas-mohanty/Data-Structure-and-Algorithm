@@ -440,8 +440,16 @@ public class LL {
         }
         System.out.println("End");
     }
+    public void display(Node node) {
+        Node temp = node;
+        while (temp != null) {
+            System.out.print(temp.value + "->");
+            temp = temp.next;
+        }
+        System.out.println("End");
+    }
 
-    // This class is for every nodes
+        // This class is for every nodes
     public static class Node{
         public int value;
         public Node next;

@@ -1,5 +1,6 @@
 package Lecture_practice_problems._61_HuffmanCoder;
 
+import javax.management.ConstructorParameters;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,6 +32,7 @@ public class HuffmanCoder {
         }
     }
 
+    // constructor
     public HuffmanCoder(String feeder) throws Exception {
         // creating a frequency map
         HashMap<Character, Integer> fmap = new HashMap<>();

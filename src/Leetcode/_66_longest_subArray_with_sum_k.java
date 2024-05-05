@@ -1,5 +1,7 @@
 package Leetcode;
+//https://shorturl.at/hjyE2
 
+// this is to find the length of the longest subArray with a given sum
 public class _66_longest_subArray_with_sum_k {
     public static void main(String[] args) {
         int [] arr = {1, 2, 3, 1, -1, -1, -1};

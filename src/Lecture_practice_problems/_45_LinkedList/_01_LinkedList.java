@@ -44,7 +44,7 @@ public class _01_LinkedList {
 
         // we have to reach till the previous node of the given value
         while(present!=null){
-            while (present!=null && present.value!=val){
+            while (present!=null && present.value !=val){
                 prev=present;
                 present=next;
                 if (next != null) {

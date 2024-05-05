@@ -3,11 +3,11 @@ package Leetcode;
 public class _77_max_subArray_sum {
     public static void main(String[] args) {
         int [] nums = {1};
-        System.out.println(maxSubArray(nums));
+        System.out.println(maxiMumSubArraySum(nums));
         System.out.println(helper2(nums));
         System.out.println(helper3(nums));
     }
-    public static int maxSubArray(int[] nums) {
+    public static int maxiMumSubArraySum(int[] nums) {
         int maxSum = (int) -1e9;
         int sum = (int) -1e9;
         return helper(nums);

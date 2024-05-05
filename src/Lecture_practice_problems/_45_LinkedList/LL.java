@@ -165,7 +165,7 @@ public class LL {
         Node dummyHead=new Node();
         Node temp=dummyHead;
         while (list1 != null && list2 != null) {
-            if(list1.value<list2.value){
+            if(list1.value <list2.value){
                 temp.next=list1;
                 temp=temp.next;
                 list1=list1.next;
@@ -322,7 +322,7 @@ public class LL {
 //
 //        }
         while (node.next != null) {
-            if(node.value==node.next.value){
+            if(node.value ==node.next.value){
                 node.next=node.next.next;
                 size--;
             }
@@ -435,7 +435,7 @@ public class LL {
     public void display(){
          Node temp=head;
         while(temp!=null){
-            System.out.print(temp.value+"->");
+            System.out.print(temp.value +"->");
             temp=temp.next;
         }
         System.out.println("End");
@@ -457,11 +457,11 @@ public class LL {
 
         }
         public Node(int value){
-            this.value=value;
+            this.value =value;
         }
 
         public Node(int value,  Node next){
-            this.value=value;
+            this.value =value;
             this.next=next;
         }
     }

@@ -473,7 +473,7 @@ public class LL {
         public ListNode() {
         }
 
-        ListNode(int x) {
+        public ListNode(int x) {
             val = x;
             next = null;
         }

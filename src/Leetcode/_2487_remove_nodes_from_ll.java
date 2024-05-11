@@ -1,4 +1,7 @@
-package Leetcode
+package Leetcode;
+import Lecture_practice_problems._45_LinkedList.LL.ListNode;
+
+import java.util.Stack;
 
 // https://leetcode.com/problems/remove-nodes-from-linked-list/description/?envType=daily-question&envId=2024-05-06
 public class _2487_remove_nodes_from_ll {

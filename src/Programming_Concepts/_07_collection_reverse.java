@@ -7,10 +7,11 @@ import java.util.PriorityQueue;
 
 public class _07_collection_reverse {
     public static void main(String[] args) {
-        int[] arr = {2, 3, 4, 5, 1};
+        Integer [] arr = {2, 3, 4, 5, 1};
         System.out.println(Arrays.toString(arr));
-        Arrays.sort(arr);
+        Arrays.sort(arr, Collections.reverseOrder());
         System.out.println(Arrays.toString(arr));
+
 
         // maxHeap
         PriorityQueue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());

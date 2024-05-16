@@ -16,13 +16,9 @@ public class _84_countSubstrings_with_k_distinct {
             // this unique is the number of unique characters, it states that if the current character at j index is already present in the map then is the unique characters is same as k if yes then we found one substring and if the current character is not present then compare the number of unique characters already present + this character which is unique++ with k if yes then found another substring
             int unique = 0;
             for (int j = i; j < s.length(); j++) {
-                if (map.containsKey(s.charAt(j))){
-                    if (unique == k) count++;
-                }
-                else {
-                    unique++;
-                    if (unique == k) count++;
-                }
+                if(!map.containsKey(s.charAt(j))) unique++;
+                if(unique == k) count++;
+
                 int temp = map.getOrDefault(s.charAt(j),0);
                 map.put(s.charAt(j), temp +1);
             }

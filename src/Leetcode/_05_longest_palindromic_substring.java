@@ -2,7 +2,7 @@ package Leetcode;
 //https://leetcode.com/problems/longest-palindromic-substring/description/
 // youtube explanation
 //https://youtu.be/vTlVtLvPQo4?si=Qw3et3QM5Gmu3_Vl
-public class _longest_palindromic_substring {
+public class _05_longest_palindromic_substring {
 
     public static void main(String[] args) {
         String s = "aacabdkacaa";

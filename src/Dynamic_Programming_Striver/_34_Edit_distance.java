@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class _34_Edit_distance {
     public static void main(String[] args) {
-        String s1 = "subas";
-        String s2 = "subu";
+        String s1 = "horse";
+        String s2 = "ros";
         int i = s1.length();
         int j = s2.length();
 

@@ -30,4 +30,21 @@ public class _01_bubble_sort {
             }
         }
     }
+
+    static void bubbleSortRec(int [] arr,int i, int j){
+        if (i == 0) {
+            return;
+        }
+        if (j<i) {
+            if(arr[j]>arr[j+1]){
+                //swap
+                int temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+            bubbleSortRec(arr, i,j+1);
+        } else{
+            bubbleSortRec(arr, i-1,0);
+        }
+    }
 }

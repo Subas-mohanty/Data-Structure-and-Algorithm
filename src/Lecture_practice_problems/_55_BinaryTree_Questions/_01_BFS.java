@@ -1,7 +1,5 @@
 package Lecture_practice_problems._55_BinaryTree_Questions;
 
-import javax.swing.tree.TreeNode;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -30,14 +28,14 @@ public class _01_BFS {
             for (int i = 0; i < levelSize; i++) {
                 TreeNode currentNode=queue.poll(); // see above for explanation
                 // remove the element from the queue and add it's value in the inside list
-//                currentLevel.add(currentNode.val);
-                // if node.left and node.right are not null we are adding those values to the queue
-//                if(currentNode.left!=null){
-//                    queue.offer(currentNode.left);
-//                }
-//                if(currentNode.right!=null){
-//                    queue.offer(currentNode.right);
-//                }
+                currentLevel.add(currentNode.val);
+//                 if node.left and node.right are not null we are adding those values to the queue
+                if(currentNode.left!=null){
+                    queue.offer(currentNode.left);
+                }
+                if(currentNode.right!=null){
+                    queue.offer(currentNode.right);
+                }
             }
             // after the completion of the level , adding the list to the answer list
             result.add(currentLevel);

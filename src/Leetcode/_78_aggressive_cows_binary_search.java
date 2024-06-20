@@ -49,7 +49,7 @@ public class _78_aggressive_cows_binary_search {
 
   public static boolean canPlace(int [] arr, int maxDistBetCows, int cows){
     int countCows = 1; // the first cow is placed at the first index of the array
-    int last = arr[0]; // this is the position where the last cow is placed, when any new cow will be placed we will update this value
+    int last = arr[0]; // this is the position where the last cow is placed, when any new cow will be placed we will update this value, this is where we put the first cow
 
     for(int i = 1; i < arr.length; i++){
       if(arr[i] - last >= maxDistBetCows){ // if the current element and the element where the last cow was placed means the distance between the cows is greater than the allowed distance(maxDistBetCows) than we can place a new cow there, and we will mark the last placed cow to this index

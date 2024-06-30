@@ -25,6 +25,7 @@ public class _11_detect_cycle_graph_bfs {
         for(int i= 0; i < V; i++){
             if(vis[i] == 0){
                 if(helper(i, V, adj, vis)) return true;
+//                if(dfs(i, -1, V, adj, vis)) return true; // for dfs
             }
         }
         return false;
@@ -50,5 +51,18 @@ public class _11_detect_cycle_graph_bfs {
             }
         }
         return false;
+    }
+
+    public boolean dfs(int src, int parent, int v, ArrayList<ArrayList<Integer>> adj, int [] vis){
+        vis[src] = 1;
+
+        for(int adjNode : adj.get(src)){
+            if(vis[adjNode] == 0){
+                if(dfs(adjNode, src, v, adj, vis)) return true;
+            }
+            // if the element is previously visited but not parent, then there is a cycle present
+            else if(adjNode != parent) return true;;
+        }
+       return false;
     }
 }

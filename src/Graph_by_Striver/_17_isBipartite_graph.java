@@ -18,13 +18,14 @@ public class _17_isBipartite_graph {
 
         for(int i = 0; i < V; i++){
             if(visit[i] == 0){
-                if(helper(i, adj, visit) == false) return false;
+//                if(bfs(i, adj, visit) == false) return false;
+                if(dfs(i, adj, visit, 1) == false) return false;
             }
         }
         return true;
     }
 
-    public boolean helper(int start, ArrayList<ArrayList<Integer>>adj, int [] visit){
+    public boolean bfs(int start, ArrayList<ArrayList<Integer>>adj, int [] visit){
         Queue<Integer> q = new LinkedList<>();
         q.offer(start);
         visit[start] = 1;
@@ -37,6 +38,16 @@ public class _17_isBipartite_graph {
                 }
                 if(visit[removed] == visit[node]) return false;
             }
+        }
+        return true;
+    }
+    public boolean dfs(int start, ArrayList<ArrayList<Integer>> adj, int [] visit, int color){
+        visit[start] = color;
+        for(int node : adj.get(start)){
+            if(visit[node] == 0) {
+                if (dfs(node, adj, visit, color == 1 ? 2 : 1) == false) return false;
+            }
+            else if(visit[node] == visit[start]) return false;
         }
         return true;
     }

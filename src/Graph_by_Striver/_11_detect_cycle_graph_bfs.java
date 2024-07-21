@@ -1,21 +1,10 @@
 package Graph_by_Striver;
 
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
 //https://shorturl.at/6nRWG
-
-
-class Pair{
-    int first;
-    int second;
-    public Pair(int first, int second){
-        this.first = first;
-        this.second = second;
-    }
-}
 
 public class _11_detect_cycle_graph_bfs {
     public boolean isCycle(int V, ArrayList<ArrayList<Integer>> adj) {
@@ -64,5 +53,17 @@ public class _11_detect_cycle_graph_bfs {
             else if(adjNode != parent) return true;;
         }
        return false;
+    }
+
+
+
+
+    class Pair{
+        int first;
+        int second;
+        public Pair(int first, int second){
+            this.first = first;
+            this.second = second;
+        }
     }
 }

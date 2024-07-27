@@ -32,7 +32,8 @@ public class TopoSort {
                 if(inDegree[neighbours] == 0) q.offer(neighbours);
             }
         }
-
+        
+        // converting list to array
         int [] ans = new int[V];
         for(int i = 0; i < V; i++){
             ans[i] = res.get(i);

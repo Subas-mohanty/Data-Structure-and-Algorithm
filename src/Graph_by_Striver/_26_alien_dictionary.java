@@ -7,6 +7,11 @@ import java.util.Queue;
 //https://bit.ly/3C9N6ZU
 public class _26_alien_dictionary {
     // TC : O(n^2 + V + E)
+
+
+    // in this problem we are converting a string graph, but how are you doing it ?
+    // we are doing that by assigning the character to numbers, i.e, a = 0, b = 1, c = 2 and so on
+    // then again when are retrieving the values we are converting these integer values to character again
     public String findOrder(String [] dict, int N, int K){
         List<List<Integer>> adjList = new ArrayList<>();
         for (int i = 0; i < K; i++) {

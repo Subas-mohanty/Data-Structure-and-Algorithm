@@ -63,5 +63,5 @@ public class _1508_range_sum_of_sorted_subarray_sums {
         }
         return (int) (ans % ((int)1e9 + 7));
         }
-    }
+
 }

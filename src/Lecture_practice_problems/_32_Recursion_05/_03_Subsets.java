@@ -26,7 +26,7 @@ public class _03_Subsets {
         helper(nums, list, temp, ind+1); // not take
         temp.add(nums[ind]); // taking the value
         helper(nums, list, temp, ind+1);
-        temp.remove(temp.size()-1); // backtrack to remove the value
+        temp.removeLast(); // backtrack to remove the value
     }
     // TC : O(N*2^N) --> No. of elements * total no. of subsets
     // SC : O(N*2^N) --> size of each list * no of list in the outer/answer array(no. of subsets)

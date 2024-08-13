@@ -24,7 +24,8 @@ public class _40_combination_sum_2 {
         if(ind == arr.length) return;
 
         for(int i = ind ; i< arr.length; i++){
-            // if the i is first time occuring then we can take that otherwise we will loss the value because of the next check
+            // if the i is first time occuring then we can take that otherwise we will loss the value because of the next check and the second check is to ensure no duplicate element is put in the list
+      // when we are at i = ind, we can check arr[i] == arr[i-1] , we case will be false, because we there might be two same element at two diff place, but when i > ind, then if two same element i present then we may have taken that previously so we are avoiding it next time
             if(i > ind && arr[i] == arr[i-1]) continue;
 
             // it is the same take condition in the normal take and not take function

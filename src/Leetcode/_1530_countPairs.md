@@ -25,4 +25,4 @@ for(int i = 1; i < 11; i++){
 }
 ```
 
-### At the end we are creating the array to send to the parent node, the array should have all element to + 1 as the leaf nodes which are present ata distance of x would be present at distance x + 1 for the parent node
+### At the end we are creating the array to send to the parent node, the array should have all element to + 1 as the leaf nodes which are present at a distance of x would be present at distance x + 1 for the parent node

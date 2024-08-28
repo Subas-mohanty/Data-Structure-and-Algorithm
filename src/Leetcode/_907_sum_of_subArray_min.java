@@ -12,7 +12,7 @@ public class _907_sum_of_subArray_min {
         int mod = (int)1e9 + 7;
         int [] nse = findNSE(arr);
         int [] pse = findPSE(arr);
-        // the algo is to find the number of element bigger than the current element in the left and right, and then multiplying them to find the number of subsets, then we know that this value will contribute to the answer this amount of time so the total contribution is product * element(arr[i]), now calculate the sum
+        // the algo is to find the number of element smaller than the current element in the left and right, and then multiplying them to find the number of subsets, then we know that this value will contribute to the answer this amount of time so the total contribution is product * element(arr[i]), now calculate the sum
         for(int i = 0; i < arr.length; i++){
             int left = i - pse[i];
             int right = nse[i] - i;

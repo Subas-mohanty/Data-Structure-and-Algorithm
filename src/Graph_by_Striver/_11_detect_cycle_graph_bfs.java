@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-//https://shorturl.at/6nRWG
+//https://bit.ly/3cZMJXp
 
 public class _11_detect_cycle_graph_bfs {
     public boolean isCycle(int V, ArrayList<ArrayList<Integer>> adj) {
@@ -36,6 +36,7 @@ public class _11_detect_cycle_graph_bfs {
                     q.offer(new Pair(adjNode, node));
                 }
                 // if the element is previously visited but not parent, then there is a cycle present
+                // we are checking for node's all connected elements(child), if a child is previously visited then that must come from the parent, if not then there is a cycle
                 else if(adjNode != parent) return true;;
             }
         }
@@ -54,8 +55,6 @@ public class _11_detect_cycle_graph_bfs {
         }
        return false;
     }
-
-
 
 
     class Pair{

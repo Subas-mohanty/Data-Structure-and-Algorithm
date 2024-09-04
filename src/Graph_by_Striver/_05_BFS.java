@@ -9,6 +9,7 @@ import java.util.Queue;
 
 public class _05_BFS {
     // bfs of tree
+    // TC : O(v + e)
     public static boolean search(Node node, int target){
         Queue<Node> q = new LinkedList<>();
         q.offer(node);

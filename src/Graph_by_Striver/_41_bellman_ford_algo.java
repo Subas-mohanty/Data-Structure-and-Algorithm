@@ -11,7 +11,7 @@ import java.util.Arrays;
 // 1. What is a negative cycle ?
 // 2. How to detect negative cycles ?
 // 3. Why N-1 iterations ?
-// Ans 1. if a graph has negative edge after relaxing all the edges and its still reducing then it is called a negative cyble
+// Ans 1. if a graph has negative edge after relaxing all the edges and its still reducing then it is called a negative cyble. Or if a graph has a cycle and the sum of total edges is negative(less than 0) then we can say the graph has a negative cycle
 // Ans 2. after relaxing all the edges, do one more iteration and check if the weight is still reducing or not, if yes then the graph has negative cycles
 // Ans 3. Let's take an example
 // ex : 0 -> 1 -> 2 -> 3 -> 4  edges[[3,4,1]], [2,3,1], [1,2,1], [0,1,1]

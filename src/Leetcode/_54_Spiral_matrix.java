@@ -4,8 +4,16 @@ import java.util.List;
 
 
 //https://leetcode.com/problems/spiral-matrix/
-public class _21_Spiral_matrix {
-    public List<Integer> spiralOrder(int[][] matrix) {
+public class _54_Spiral_matrix {
+    public static void main(String[] args) {
+        int [][] matrix = {
+                {1,2,3},
+                {4,5,6},
+                {1,5,8}
+        };
+        System.out.println(spiralOrder(matrix));
+    }
+    public static List<Integer> spiralOrder(int[][] matrix) {
         int top=0;
         int left=0;
         int bottom=matrix.length-1;
@@ -14,11 +22,15 @@ public class _21_Spiral_matrix {
 
         while(left<=right && top<=bottom){
 
+
+            // printing top row for left to right
             for(int i=left;i<=right;i++){
                 list.add(matrix[top][i]);
             }
+            // after printing the first row move the row to one line down
             top++;
 
+            // printing top to bottom
             for(int i=top;i<=bottom;i++){
                 list.add(matrix[i][right]);
             }

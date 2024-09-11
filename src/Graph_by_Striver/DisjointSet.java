@@ -1,5 +1,8 @@
 package Graph_by_Striver;
+//https://www.youtube.com/watch?v=7wgUuv0U5zs
 
+
+// TC : O(4 alpha) --> near to constant
 public class DisjointSet {
     int [] rank;
     int [] parent;

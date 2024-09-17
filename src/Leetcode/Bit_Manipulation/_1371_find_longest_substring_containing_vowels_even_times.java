@@ -1,4 +1,4 @@
-package Leetcode.Bitmasking;
+package Leetcode.Bit_Manipulation;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -49,7 +49,7 @@ public class _1371_find_longest_substring_containing_vowels_even_times {
     }
 
 
-   public int findTheLongestSubstring(String s) {
+   public int findTheLongestSubstring2(String s) {
         Map<String, Integer> map = new HashMap<>();
         int [] state = new int[5];
 

@@ -9,6 +9,35 @@ public class _66_longest_subArray_with_sum_k {
         System.out.println(longestSubarrayWithSumK(arr, k));
         System.out.println(getLongestSubarray(arr, (int)k));
     }
+
+    // TC : O(2n)
+    // SC : O(1)
+    // this works only if the array has all positive number and doesn't have 0s
+    public static int lenOfLongSubarr(int A[], int N, int K) {
+        int n = A.length;
+
+        int i = 0;
+        int j = 0;
+        int max = 0;
+
+        int sum = 0;
+        while(j < n){
+            // sum is greater than shrink the window from the left
+            while(i < j && sum > K){
+                i++;
+                sum -= A[i];
+            }
+            // when sum is equal to K, find the max length
+            if(sum == K) max = Math.max(max, j-i+1);
+            // otherwise move j and update the sum
+            j++;
+            if(j < n) sum += A[j];
+        }
+        return max;
+    }
+
+
+
     public static int longestSubarrayWithSumK(int []a, long k) {
         int ans = 0;
         int i = 0;

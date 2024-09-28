@@ -5,31 +5,34 @@ package Leetcode;
 import java.util.Arrays;
 import java.util.Comparator;
 
-// Item class given in the question
-class Item {
-    int value, weight;
-    Item(int x, int y){
-        this.value = x;
-        this.weight = y;
-    }
-}
 
-// class implementing Comparator to compare objects
-class ItemComparator implements Comparator<Item> {
-    public int compare(Item a, Item b){
-        double r1 = (double)a.value/(double)a.weight;
-        double r2 = (double) b.value / (double) b.weight;
 
-        if(r1 < r2) return 1; // sort in ascending
-        else if(r1 > r2) return -1; // sort in descending
-        else return 0; // doesn't sort , leave the array as it is
-    }
-}
 public class _56_divide_knapsack {
 
-    double fractionalKnapsack(int W, Item [] arr, int n) {
-        Arrays.sort(arr, new ItemComparator());
+    double fractionalKnapsack2(int w, Item arr[], int n) {
+        double ans = 0;
+        // sort in increasing order (value/weight)
+        Arrays.sort(arr, (x, y) -> Double.compare((double) y.value / y.weight, (double) x.value / x.weight));
+        for(Item it : arr){
+            int val = it.value;
+            int wt = it.weight;
+            if(wt <= w) ans += val;
+            else{
+                ans += (double)val/wt * w;
+                break;
+            }
+            w -= wt;
+        }
+        return ans;
+    }
 
+
+    double fractionalKnapsack(int W, Item [] arr, int n) {
+//        Arrays.sort(arr, new ItemComparator());
+
+        // we can simply do like this also, we can't simply return y.value/y.weight - x.value/x.weight
+        // because it returns a double value but the comparator needs a integer value
+        Arrays.sort(arr, (x, y) -> Double.compare((double)y.value/y.weight, (double)x.value/x.weight));
         int count = 0;
         double ans = 0;
 
@@ -49,4 +52,30 @@ public class _56_divide_knapsack {
         }
         return ans;
     }
+
+
+
+    // class implementing Comparator to compare objects
+    class ItemComparator implements Comparator<Item> {
+        public int compare(Item a, Item b){
+            double r1 = (double)a.value/(double)a.weight;
+            double r2 = (double) b.value / (double) b.weight;
+
+            if(r1 < r2) return 1; // sort in ascending
+            else if(r1 > r2) return -1; // sort in descending
+            else return 0; // doesn't sort , leave the array as it is
+        }
+    }
+
+
+    // Item class given in the question
+    class Item {
+        int value, weight;
+        Item(int x, int y){
+            this.value = x;
+            this.weight = y;
+        }
+    }
+
+
 }

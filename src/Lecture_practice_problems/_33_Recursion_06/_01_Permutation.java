@@ -6,8 +6,8 @@ public class _01_Permutation {
     public static void main(String[] args) {
         String s="abc";
         permutations("",s);
-        System.out.println(permutations3("", s));
-        System.out.println(permutations4("", s, 0));
+//        System.out.println(permutations3("", s));
+//        System.out.println(permutations4("", s, 0));
     }
     static void permutations(String p, String up){
         if (up.isEmpty()) {

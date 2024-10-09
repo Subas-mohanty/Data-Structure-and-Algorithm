@@ -1,6 +1,9 @@
 package Leetcode;
 //https://shorturl.at/hjyE2
 
+import java.util.HashMap;
+import java.util.Map;
+
 // this is to find the length of the longest subArray with a given sum
 public class _66_longest_subArray_with_sum_k {
     public static void main(String[] args) {
@@ -37,7 +40,8 @@ public class _66_longest_subArray_with_sum_k {
     }
 
 
-
+    // TC : O(n^2)
+    // SC : O(1)
     public static int longestSubarrayWithSumK(int []a, long k) {
         int ans = 0;
         int i = 0;
@@ -63,6 +67,8 @@ public class _66_longest_subArray_with_sum_k {
     }
 
     // negative numbers included
+    // TC : O(n^2)
+    // SC : O(1)
     public static int getLongestSubarray(int []a, int k) {
         int ans = 0;
         int n = a.length;
@@ -75,6 +81,35 @@ public class _66_longest_subArray_with_sum_k {
                    ans = Math.max(ans, length);
                }
             }
+        }
+        return ans;
+    }
+
+
+
+    // for both positive and negative numbers
+    // TC : O(n)
+    // SC : O(n)
+    public static int lenOfLongSubarr2(int A[], int N, int K) {
+        Map<Integer, Integer> map = new HashMap<>();
+
+        int sum = 0;
+        int ans = 0;
+        // at each index we are checking if previously curr cumulative sum - K occur or not and if occurs, then at which index
+
+        for(int i = 0; i < N; i++){
+            sum += A[i];
+            // If the sum is equal to K, update the answer
+            if(sum == K) ans = Math.max(ans, i + 1);
+
+            // Check if (sum - K) is already in the map
+            if(map.containsKey(sum - K)){
+                ans = Math.max(ans, i - map.get(sum - K));
+            }
+
+            // Store the prefix sum in the map if it's not already present
+            // this check is for negative and 0
+            if(!map.containsKey(sum)) map.put(sum, i);
         }
         return ans;
     }

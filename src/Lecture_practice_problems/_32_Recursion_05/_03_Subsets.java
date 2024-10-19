@@ -20,7 +20,7 @@ public class _03_Subsets {
 
     public static void helper(int[] nums, List<List<Integer>> list, List<Integer> temp, int ind){
         if(ind == nums.length){
-            list.add(new ArrayList(temp));
+            list.add(new ArrayList<>(temp));
             return;
         }
         helper(nums, list, temp, ind+1); // not take

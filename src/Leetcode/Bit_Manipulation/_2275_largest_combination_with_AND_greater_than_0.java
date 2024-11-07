@@ -35,7 +35,7 @@ public class _2275_largest_combination_with_AND_greater_than_0 {
     // Use an int[24] count to count the position of 1s of each number;
     // in the array storing all the bit position value for each number, for ex : storing in which position there is a set bit for each number, now the max value of can[i] <= 1e7 so taking 24 size because 2 ^ 24 is 16777216, now we have to find the max of the array because in the array, we are storing the count of set bits, so at which index the count of setbits will be max, that much number of elements from the can array has setbits at that position and that will be our anwer
     // Return the max count of a position
-    
+
     public int largestCombination(int[] can) {
         int [] arr = new int[24];
         for(int a : can){

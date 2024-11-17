@@ -4,17 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.PriorityQueue;
 //https://leetcode.com/problems/ipo/description/?envType=daily-question&envId=2024-06-15
-class Pair implements Comparable<Pair>{
-    int a;
-    int b;
-    Pair(int a, int b){
-        this.a = a;
-        this.b = b;
-    }
-    public int compareTo(Pair o){
-        return this.b - o.b;
-    }
-}
+
 public class _502_ipo {
     public static void main(String[] args) {
         int k = 2;
@@ -47,5 +37,18 @@ public class _502_ipo {
             w += maxHeap.poll();
         }
         return w;
+    }
+
+
+    static class Pair implements Comparable<Pair>{
+        int a;
+        int b;
+        Pair(int a, int b){
+            this.a = a;
+            this.b = b;
+        }
+        public int compareTo(Pair o){
+            return this.b - o.b;
+        }
     }
 }

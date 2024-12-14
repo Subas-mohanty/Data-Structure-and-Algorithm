@@ -3,7 +3,7 @@ import java.util.*;
 //https://leetcode.com/problems/find-score-of-an-array-after-marking-all-elements/description/?envType=daily-question&envId=2024-12-13
 
 public class _2593_find_score_of_an_array_after_marking_all_elements {
-       public static void main(String[] args) {
+    public static void main(String[] args) {
         int [] arr = {2,5,6,6,10};
         System.out.println(findScore(arr));
     }
@@ -34,6 +34,27 @@ public class _2593_find_score_of_an_array_after_marking_all_elements {
             // marking prev and next index as visited
             if(first >= 0) visit[first] = true;
             if(second < n) visit[second] = true;
+        }
+        return score;
+    }
+
+    public static long findScore2(int[] nums) {
+        int n = nums.length;
+        int [][] sorted = new int[n][2];
+        boolean [] visit = new boolean[n];
+
+        for(int i = 0; i < n; i++){
+            sorted[i][0] = i;
+            sorted[i][1] = nums[i];
+        }
+        Arrays.sort(sorted, (a, b) -> a[1] - b[1]);
+
+        int score = 0;
+        for (int i = 0; i < n; i += 2) {
+            int index = sorted[i][0];
+            int ele = sorted[i][1];
+            if(visit[index]) continue;
+            score += ele;
         }
         return score;
     }

@@ -267,12 +267,12 @@ public class LL {
     public ListNode detectCycle(ListNode head) {
         ListNode fast = head;
         ListNode slow = head;
-        int count = 0;
         while(fast != null && fast.next != null){
             slow = slow.next;
             fast= fast.next.next;
             if(slow == fast) break;
         }
+        if(fast == null || fast.next == null) return null;
         ListNode temp = head;
         while(temp != null){
             temp = temp.next;

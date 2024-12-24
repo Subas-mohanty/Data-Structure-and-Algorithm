@@ -30,7 +30,7 @@ public class _2471_min_operations_to_sort_BT_by_level {
                 count++;
                 int swapIndex = map.get(sorted.get(i));
                 map.put(ele, swapIndex);
-                map.put(map.get(swapIndex), i);
+                map.put(level.get(swapIndex), i);
                 Collections.swap(level, i, swapIndex);
             }
         }

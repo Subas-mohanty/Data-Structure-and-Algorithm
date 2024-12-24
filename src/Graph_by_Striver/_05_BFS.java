@@ -1,11 +1,11 @@
 package Graph_by_Striver;
 
-import Lecture_practice_problems._41_OOPS_05_Interface_Annotations.A;
-import Lecture_practice_problems._49_BinaryTree_01.BinaryTree.Node;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+
+import Lecture_practice_problems_kunal_kushwaha._41_OOPS_05_Interface_Annotations.A;
+import Lecture_practice_problems_kunal_kushwaha._49_BinaryTree_01.BinaryTree.Node;
 
 public class _05_BFS {
     // bfs of tree

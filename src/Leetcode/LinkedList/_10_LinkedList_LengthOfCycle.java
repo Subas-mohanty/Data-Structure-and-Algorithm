@@ -1,6 +1,6 @@
 package Leetcode.LinkedList;
 
-import Lecture_practice_problems._45_LinkedList.LL;
+import Lecture_practice_problems_kunal_kushwaha._45_LinkedList.LL;
 
 public class _10_LinkedList_LengthOfCycle {
     public int lengthOfCycle(LL.Node head){

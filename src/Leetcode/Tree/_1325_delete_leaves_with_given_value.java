@@ -1,6 +1,6 @@
 package Leetcode.Tree;
 
-import Lecture_practice_problems._55_BinaryTree_Questions.TreeNode;
+import Lecture_practice_problems_kunal_kushwaha._55_BinaryTree_Questions.TreeNode;
 
 // https://leetcode.com/problems/delete-leaves-with-a-given-value/description/?envType=daily-question&envId=2024-05-17
 

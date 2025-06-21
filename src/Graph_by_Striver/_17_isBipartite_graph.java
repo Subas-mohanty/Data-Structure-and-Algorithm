@@ -14,7 +14,7 @@ import java.util.Queue;
 */
 public class _17_isBipartite_graph {
     public boolean isBipartite(int V, ArrayList<ArrayList<Integer>>adj){
-        int [] visit = new int[V];
+        int [] visit = new int[V]; // the visit array is also used to mark color
 
         for(int i = 0; i < V; i++){
             if(visit[i] == 0){

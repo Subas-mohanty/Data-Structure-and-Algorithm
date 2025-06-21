@@ -44,10 +44,10 @@ public class _42_longest_increasing_subsequences {
     }
     public static int lis3(int [] arr, int [][] dp){
         int n = arr.length;
-        for (int i = 0; i <n ; i++){
-//            dp[n][i] = 0;
-            dp[i][0] = 1;
-        }
+//        for (int i = 0; i <n ; i++){
+////            dp[n][i] = 0;
+//            dp[i][0] = 1;
+//        }
 
 //        for (int i = n-1; i >= 0 ; i--) {
 //            for (int j = -1; j < n ; j++) {

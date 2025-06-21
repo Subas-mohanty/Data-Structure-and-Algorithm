@@ -30,4 +30,10 @@ public class _10_fast_exponentation {
         if(pow % 2 == 0) return ans;
         return ans.multiply(BigInteger.valueOf(base));
     }
+    static int findPower(int base, int pow){
+        if(pow == 1) return base;
+        int half = findPower(base, pow/2);
+        if(pow % 2 == 0) return half * half;
+        return half * half * base;
+    }
 }

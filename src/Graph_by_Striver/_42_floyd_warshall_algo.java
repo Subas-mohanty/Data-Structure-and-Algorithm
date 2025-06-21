@@ -44,12 +44,6 @@ public class _42_floyd_warshall_algo {
         }
         
         // the question asks if a path can't be reached then assign the value to -1
-//        for(int [] a : matrix){
-//            for(int b : a){
-//                if(b == (int)1e9) b = -1;
-//            }
-//        }
-
         for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){
                 if(matrix[i][j] == (int)1e9) matrix[i][j] = -1;

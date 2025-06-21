@@ -2,13 +2,13 @@ package Graph_by_Striver;
 //https://www.youtube.com/watch?v=7wgUuv0U5zs
 
 
-// TC : O(4 alpha) --> near to constant
+// TC : O(4 alpha(n)) --> near to constant
 public class DisjointSet {
     int [] rank;
     int [] parent;
     int [] size;
     int components;
-
+    
     public DisjointSet(int n){
         this.rank = new int[n];
         this.parent = new int[n];

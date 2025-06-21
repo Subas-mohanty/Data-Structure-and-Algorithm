@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class _01_bubble_sort {
     public static void main(String[] args) {
 //        int [] arr={1,2,3,4,5};
-        int [] arr={2,0,2,1,1,0};
+        int [] arr={5,8,22,18,1};
         bubble(arr);
         System.out.println(Arrays.toString(arr));
     }
@@ -23,7 +23,9 @@ public class _01_bubble_sort {
                     arr[j-1]=temp;
                     swapped=true;
                 }
+
             }
+            System.out.println(Arrays.toString(arr));
             // if you did not swap for any particular value of it means the array is sorted hence not need to check again
             if (!swapped) { // when the swapped is false that means this does not go inside the loop so the array is sorted , so we break it after one check
                 break;

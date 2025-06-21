@@ -4,7 +4,8 @@ import java.util.Arrays;
 //https://bit.ly/3nXqfce
 public class _49_matrix_chain_multiplication {
     public static void main(String[] args) {
-        int [] arr = {4,5,3,2};
+//        int [] arr = {4,5,3,2};
+        int [] arr = {10,20,30,40,50};
         int n = arr.length;
 
         System.out.println(MCM(arr, 1, n-1));
@@ -17,14 +18,14 @@ public class _49_matrix_chain_multiplication {
         System.out.println(MCM3(arr, Dp));
     }
     public static int MCM(int [] arr, int i, int j){
-    if(i == j) return 0;
+        if(i == j) return 0;
 
-    int min =Integer.MAX_VALUE;
-    for(int k = i; k < j ; k++){
-      int steps = arr[i-1] * arr[k] * arr[j] + MCM(arr, i, k) + MCM(arr, k+1, j);
-      min = Math.min(min, steps);
-    }
-    return min;
+        int min =Integer.MAX_VALUE;
+        for(int k = i; k < j ; k++){
+            int steps = arr[i-1] * arr[k] * arr[j] + MCM(arr, i, k) + MCM(arr, k+1, j);
+            min = Math.min(min, steps);
+        }
+        return min;
   }
 
   // TC : O(n*n) * n == O(n^3) , the extra n is for the loop

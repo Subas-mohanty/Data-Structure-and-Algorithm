@@ -1,5 +1,4 @@
 .idea/
 out/
 Data-Structure-and-Algorithm.iml
-src/Main.java
-src/Solution2.java
+src/Solution.java

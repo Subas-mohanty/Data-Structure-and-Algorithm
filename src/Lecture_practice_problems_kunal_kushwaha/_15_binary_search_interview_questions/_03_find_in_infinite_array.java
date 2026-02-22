@@ -32,6 +32,6 @@ public class _03_find_in_infinite_array {
                 return mid;
             }
         }
-        return mid;
+        return -1;
     }
 }

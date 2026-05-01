@@ -1,4 +1,4 @@
-package Programming_Concepts;
+package Competitive_Programming;
 
 public class _08_mutable_immutable {
     public static void main(String[] args) {

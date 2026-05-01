@@ -1,4 +1,4 @@
-package Programming_Concepts;
+package Competitive_Programming;
 
 class Main{
     void main(){

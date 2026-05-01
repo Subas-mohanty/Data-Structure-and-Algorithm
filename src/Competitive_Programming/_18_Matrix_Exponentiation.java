@@ -1,5 +1,4 @@
-package Programming_Concepts;
-import java.util.Scanner;
+package Competitive_Programming;
 
 // finding fibonacci in log(n) time with matrix exponentiation
 // TC : O(log n)

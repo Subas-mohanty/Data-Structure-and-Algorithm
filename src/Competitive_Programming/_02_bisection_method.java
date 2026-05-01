@@ -1,6 +1,4 @@
-package Programming_Concepts;
-
-import java.util.function.Function;
+package Competitive_Programming;
 
 public class _02_bisection_method {
     public static void main(String[] args) {

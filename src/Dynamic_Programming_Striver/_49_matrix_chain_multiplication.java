@@ -18,10 +18,16 @@ public class _49_matrix_chain_multiplication {
         System.out.println(MCM3(arr, Dp));
     }
     public static int MCM(int [] arr, int i, int j){
-        if(i == j) return 0;
+        if(i == j) return 0; // only one matrix is present
 
         int min =Integer.MAX_VALUE;
         for(int k = i; k < j ; k++){
+            // the cost to multiply two matrices is
+            // (a * b) * (b * c) = a * b * c
+            // why ?
+            // the resultant matrix will be of size a * c
+            // now to find each element in the resultant matrix we have to do b multiplication(col of first matrix * row of second matrix)
+            // so the total cost is a * b * c
             int steps = arr[i-1] * arr[k] * arr[j] + MCM(arr, i, k) + MCM(arr, k+1, j);
             min = Math.min(min, steps);
         }

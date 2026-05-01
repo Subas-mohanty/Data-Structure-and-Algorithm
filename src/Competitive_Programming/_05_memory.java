@@ -1,4 +1,4 @@
-package Programming_Concepts;
+package Competitive_Programming;
 
 public class _05_memory {
     public static void main(String[] args) {

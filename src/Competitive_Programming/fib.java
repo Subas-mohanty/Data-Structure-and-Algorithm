@@ -1,6 +1,5 @@
-package Programming_Concepts;
+package Competitive_Programming;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class fib {

@@ -1,6 +1,6 @@
-package Programming_Concepts;
+package Competitive_Programming;
 
-import static Programming_Concepts._02_bisection_method.f;
+import static Competitive_Programming._02_bisection_method.f;
 
 public class sacant_method {
     public static void main(String[] args) {

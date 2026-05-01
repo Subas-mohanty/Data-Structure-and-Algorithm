@@ -1,4 +1,4 @@
-package Programming_Concepts;
+package Competitive_Programming;
 
 // what is modular nCr and Fermat's little theorem ?
 // formula for (a * b) % m = [(a % m) * (b % m)] % m

@@ -1,4 +1,4 @@
-package Programming_Concepts;
+package Competitive_Programming;
 
 public class _11_thread {
     public static void main(String[] args) {

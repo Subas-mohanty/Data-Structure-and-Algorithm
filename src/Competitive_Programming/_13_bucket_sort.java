@@ -1,4 +1,4 @@
-package Programming_Concepts;
+package Competitive_Programming;
 import java.util.*;
 
 public class _13_bucket_sort {

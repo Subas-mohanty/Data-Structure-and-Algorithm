@@ -1,4 +1,4 @@
-package Programming_Concepts;
+package Competitive_Programming;
 import Leetcode.TreeNode;
 import java.util.List;
 
